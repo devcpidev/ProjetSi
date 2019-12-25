@@ -31,13 +31,21 @@ class Login extends CI_Controller
 
         $user = $this->user->checkUser($email,$password);
        
-        if($user && $user->etat==1){
+        if($user && $user->etat==1  && $user->profil==1){
 
             $this->session->set_userdata('user', $user);
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
           
             redirect('Login/home');
+
+        }if($user && $user->etat==1 && $user->profil==2){
+            $this->session->set_userdata('user', $user);
+            $this->session->set_userdata('email',$email);
+            $this->session->set_userdata('type',$user->libelle);
+
+            //$this->load->view('collecte/addcollecte',$data);
+           redirect('collecte/add');
 
         }
         else{

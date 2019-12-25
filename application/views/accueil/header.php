@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>public/css/responsive.css">
     <!-- modernizr JS
 		============================================ -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="<?php echo base_url();?>public/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
