@@ -8,15 +8,15 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i> Collecter</a></li> 
+                                    <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i> Bien Bati</a></li> 
                                 </ul>
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
                                         <div class="row">
-                                            <form method="POST" action="<?php echo base_url();?>index.php/Collecte/save">   
+                                            <form method="POST" action="<?php echo base_url();?>index.php/Collecte/save" enctype="multipart/form-data">   
                                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="nom" placeholder="Nom du Proprétaire">
+                                                            <input required type="text" class="form-control" name="nom" placeholder="Nom du Proprétaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
@@ -103,6 +103,7 @@
                                                            
                                                             </select>
                                                         </div>
+                                                       
                                                         <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                             <select class="form-control"name="typebienbati" id="typebienbati">
@@ -130,8 +131,23 @@
                                                         </div>
                                                         <div id="nbgarage">
                                                             
-                                                            </div>
+                                                        </div>
                                                         <div id="typecuisine">
+                                                            
+                                                        </div>
+                                                        <div id="cours">
+                                                            
+                                                        </div>
+                                                        <div id="piscine">
+                                                            
+                                                        </div>
+                                                        <div id="typeimmeuble">
+                                                            
+                                                        </div>
+                                                        <div id="sitstudio">
+                                                            
+                                                        </div>
+                                                        <div id="autreinfos">
                                                             
                                                         </div>
                                                         <div class="input-group mg-b-15">
@@ -149,6 +165,10 @@
                                                         </div>
                                                         <div id="collabor">
                                                             
+                                                        </div>
+                                                        <div class="input-group mg-b-15">
+                                                            <span class="input-group-addon"><i class="fa fa-document" aria-hidden="true"></i></span>
+                                                            <input required type="file" class="form-control" name="document" >
                                                         </div>
                                                         <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
