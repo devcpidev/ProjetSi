@@ -42,5 +42,31 @@
             $this->db->insert('details',$data);
             return $this->db->insert_id();
         }
+
+        public function getMaxidP(){
+            $resultat = $this->db->query("SELECT Max(idproduit) AS max FROM produit");
+            return $resultat->row()->max;
+        }
+
+        public function setFiles($index,$photo,$detail){
+
+            $this->db->set('document'.$index, $photo);
+            $this->db->where('idproduit',$detail);
+            return $this->db->update('produit');
+        }
+
+        public function mesCollectes($iduser)
+        {
+            return $this->db->select('*')
+            ->from('collecte')
+            ->where('utilisateur',$iduser)
+            ->get()
+            ->result();
+        }
+
+        public function getDocs($dossier){
+            $query = $this->db->query("SELECT  document1,document2 FROM collecte c WHERE c.numdossier='$dossier' ");
+            return $query->row();
+        }
     }
 ?>

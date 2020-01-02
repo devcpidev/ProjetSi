@@ -80,6 +80,26 @@
                                                             <input type="text" class="form-control" name="adresse" placeholder="Localisation du produit">
                                                         </div>
                                                         <div class="input-group mg-b-15">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" name="broutep" value="Bordure Route Principale">
+                                                                <label class="form-check-label" for="broutep" >Bordure Route Principale</label>
+                                                                <input type="checkbox" class="form-check-input" name="broute" value="Bordure Route">
+                                                                <label class="form-check-label" for="broute">Bordure Route </label>
+                                                                <input type="checkbox" class="form-check-input" name="angle" value="Angle">
+                                                                <label class="form-check-label" for="angle">Angle</label>
+                                                                <input type="checkbox" class="form-check-input" name="loinmarche" value="Loin du Marche">
+                                                                <label class="form-check-label" for="loinmarche">loin du Marche</label>
+                                                                <input type="checkbox" class="form-check-input" name="presmarche" value="Pres du Marche">
+                                                                <label class="form-check-label" for="presmarche">Près du marché</label>
+                                                                <input type="checkbox" class="form-check-input" name="loinculte" value="Loin d'un culte">
+                                                                <label class="form-check-label" for="loinculte">Loin d'un lieu culte</label>
+                                                                <input type="checkbox" class="form-check-input" name="presculte" value="Pres d'un lieu culte">
+                                                                <label class="form-check-label" for="presculte">Près d'un lieu culte</label>
+                                                                <input type="checkbox" class="form-check-input" name="loinecole" value="Loin d'une ecole">
+                                                                <label class="form-check-label" for="loinecole">Loin d'un ecole</label>
+                                                                <input type="checkbox" class="form-check-input" name="presecole" value="Pres d'une ecole">
+                                                                <label class="form-check-label" for="presecole">Près d'une ecole</label>
+                                                            </div>
                                                             <span class="input-group-addon"><i class="fa fa-adresse" aria-hidden="true"></i></span>
                                                             <select  class="form-control" name="positionnement" id="positionnement">
                                                             <option value="">position de votre bien</option>
@@ -111,7 +131,7 @@
                                                                 <?php
                                                                 foreach ($type as $t)
                                                                 {
-                                                                    echo"<option value='$t->id'> $t->libelle</option>";
+                                                                    echo"<option value='$t->idtypebien'> $t->libelletype</option>";
                                                                 }
                                                                 ?>
                                                            
@@ -157,7 +177,7 @@
                                                                 <?php
                                                                 foreach ($collaboration as $c)
                                                                 {
-                                                                    echo"<option value='$c->id'> $c->libelle</option>";
+                                                                    echo"<option value='$c->idc'> $c->libellec</option>";
                                                                 }
                                                                 ?>
                                                            
@@ -168,7 +188,7 @@
                                                         </div>
                                                         <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-document" aria-hidden="true"></i></span>
-                                                            <input required type="file" class="form-control" name="document" >
+                                                            <input required type="file" class="form-control" name="document[]" multiple="" >
                                                         </div>
                                                         <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>

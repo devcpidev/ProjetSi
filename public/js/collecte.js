@@ -11,22 +11,39 @@ $(document).ready(function(){
     }
 
     if($('#typebienbati').val() == 2){
+        //hide
+        $('#jardin').html("")
+        $('#typeimmeuble').html("") 
+        // end hide
         $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
         $('.nbsalledebain').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbsalledebain' placeholder='Ajouter le nombre de salle de bain'></div>")
         $('#nbtoilettes').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbtoilettes' placeholder='Ajouter le nombre de toilettes visiteurs'></div>")
         $('#nbgarage').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbgarage' placeholder='Ajouter le nombre de garages'></div>")
-        $('#typecuisine').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><select  class='form-control' name='typecuisine' id='typecuisine'> <option value=''>Type de cuisine</option><option value='europeenne'>Européenne</option><option value='africaine'>Africaine</option></select></div>")
+        $('#typecuisine').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><select  class='form-control' name='typecuisine' > <option value=''>Type de cuisine</option><option value='europeenne'>Européenne</option><option value='africaine'>Africaine</option></select></div>")
         $('#cours').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbcours' placeholder='Ajouter le nombre de cours'></div>")
-        $('#piscine').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i>Piscine</span><input class='form-check-input' type='checkbox' id='piscine' name='piscine' value='OUI'><label class='form-check-label' for='piscine'>OUI</label><input class='form-check-input' type='checkbox' id='piscine' name='piscine' value='NON' style=' margin-left: 50px';><label class='form-check-label' for='jardin'>NON</label></div>")
+        $('#piscine').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i>Piscine</span><input class='form-check-input' type='checkbox'  name='piscine' value='OUI'><label class='form-check-label' for='piscine'>OUI</label><input class='form-check-input' type='checkbox' id='piscine' name='piscine' value='NON' style=' margin-left: 50px';><label class='form-check-label' for='jardin'>NON</label></div>")
         
     }
     if($('#typebienbati').val() == 3){
-        $('#typeimmeuble').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='typeimmeuble' id='typeimmeuble'> <option value=''>Type d'immeuble</option> <option value='R+1'>R+1</option> <option value='R+2'>R+2</option><option value='R+3'>R+3</option><option value='R+4'>R+4</option> <option value='R+5'>R+5</option><option value='Autre'>Autre</option></select></div>")
-        
-        
+         //hide
+        $('#jardin').html("")
+        $('#nbpieces').html("")
+        $('.nbsalledebain').html("")
+        $('#nbtoilettes').html("")
+        $('#nbgarage').html("")
+        $('#typecuisine').html("")
+        $('#cours').html("")
+        $('#piscine').html("")
+        $('#autreinfos').html("")
+        $('#sitstudio').html("")
+         // end hide
+        $('#typeimmeuble').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='typeimmeuble'> <option value=''>Type d'immeuble</option> <option value='R+1'>R+1</option> <option value='R+2'>R+2</option><option value='R+3'>R+3</option><option value='R+4'>R+4</option> <option value='R+5'>R+5</option><option value='Autre'>Autre</option></select></div>") 
     }
     if($('#typebienbati').val() == 4){
-        $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' id='studiositue'> <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='1er etage'>1er Etage</option><option value='2ieme etage'>2ieme etage</option><option value='3ieme etage'>3ieme etage</option> <option value='4ieme etage'>4ieme etage</option><option value='5ieme etage'>5ieme etage</option><option value='6ieme etage'>6ieme etage</option></select></div>")
+         //hide
+         $('#typeimmeuble').html("")
+          // end hide
+        $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' > <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='1er etage'>1er Etage</option><option value='2ieme etage'>2ieme etage</option><option value='3ieme etage'>3ieme etage</option> <option value='4ieme etage'>4ieme etage</option><option value='5ieme etage'>5ieme etage</option><option value='6ieme etage'>6ieme etage</option></select></div>")
         $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
         $('.nbsalledebain').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbsalledebain' placeholder='Ajouter le nombre de salle de bain'></div>")
         $('#nbtoilettes').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbtoilettes' placeholder='Ajouter le nombre de toilettes visiteurs'></div>")
@@ -44,13 +61,30 @@ $(document).ready(function(){
     }
 
     if($('#typebienbati').val() == 6){
-        $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' id='studiositue'> <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='etage'>Etage</option></select></div>")
+        //hide
+        $('#jardin').html("")
+        $('#nbgarage').html("")
+        $('#typecuisine').html("")
+        $('#cours').html("")
+        $('#piscine').html("")
+        $('#autreinfos').html("")
+         // end hide
+        $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue'> <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='etage'>Etage</option></select></div>")
         $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
         $('.nbsalledebain').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbsalledebain' placeholder='Ajouter le nombre de salle de bain'></div>")
         $('#nbtoilettes').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbtoilettes' placeholder='Ajouter le nombre de toilettes visiteurs'></div>")
     }
     if($('#typebienbati').val() == 7){
-        $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' id='studiositue'> <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='etage'>Etage</option></select></div>")
+        //hide
+        $('#jardin').html("")
+        $('#nbgarage').html("")
+        $('#typecuisine').html("")
+        $('#cours').html("")
+        $('#piscine').html("")
+        $('#autreinfos').html("")
+        $('#typeimmeuble').html("")
+         // end hide
+        $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' > <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='etage'>Etage</option></select></div>")
         $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
         $('.nbsalledebain').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbsalledebain' placeholder='Ajouter le nombre de salle de bain'></div>")
         $('#nbtoilettes').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbtoilettes' placeholder='Ajouter le nombre de toilettes visiteurs'></div>")

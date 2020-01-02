@@ -32,7 +32,7 @@ class Login extends CI_Controller
         $user = $this->user->checkUser($email,$password);
        
         if($user && $user->etat==1  && $user->profil==1){
-
+            $this->session->set_userdata('idUser', $user->idUser);
             $this->session->set_userdata('user', $user);
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
@@ -43,6 +43,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('user', $user);
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
+            $this->session->set_userdata('idUser', $user->idUser);
 
             //$this->load->view('collecte/addcollecte',$data);
            redirect('collecte/add');

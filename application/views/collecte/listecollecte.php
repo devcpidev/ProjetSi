@@ -12,14 +12,30 @@
                             </div>
                             <table>
                                 <tr>
-                                    <th>Identifiant</th>
-                                    <th>Utilisateur</th>
+                                    <th>Numero du dossier</th>
                                     <th>Date Collecte</th>
-                                    <th>Tache</th>
-                                    <th>Produit</th>
+                                    <th>Adresse précise du bien</th>
+                                    <th>Nature juridique du bien</th>
+                                    <th>Type du bien</th>
+                                    <th>Collaboration avec cpi</th>
                                     <th>Action</th>
                                 </tr>
-                                
+                                <?php foreach($infos as $i){ ?>
+                                    <tr>
+                                        <td><?php echo  $i->numdossier; ?></td>
+                                        <td><?php echo  $i->datecollecte; ?></td>
+                                        <td><?php echo  $i->adresse; ?></td>
+                                        <td><?php echo $i->nature; ?></td>
+                                        <td><?php echo  $i->libelletype; ?></td>
+                                        <td><?php echo  $i->libellec; ?></td>
+                                       
+                                        <td class="actions" style="width: 1%; text-align: center; white-space: nowrap">
+                                        <!-- <a href="<?php echo base_url();?>index.php/Collecte/download?numdossier=<?php echo $i->numdossier?>">download</a> -->
+                                        <button class="edit" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button>
+                                        <button class="delete" type="submit" value=""action="deleteUser" id="<?php echo  $i->utilisateur; ?>"> <i class="fa fa-edit fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </table>
                             <div class="custom-pagination">
                                 <nav aria-label="Page navigation example">

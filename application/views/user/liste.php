@@ -35,17 +35,17 @@
                                             ?>
                                 <tr>
                                                 <td><?php echo $pub->idUser; ?></td>
-                                                <td><?php echo $pub->nom ;?></td>
+                                                <td><?php echo $pub->nomu ;?></td>
                                                 <td><?php echo $pub->prenom ;?></td>
-                                                <td><?php echo $pub->tel; ?></td>
-                                                <td><?php echo $pub->adresse;?></td>
-                                                <td><?php echo $pub->email ;?></td>
+                                                <td><?php echo $pub->telu; ?></td>
+                                                <td><?php echo $pub->adresseu;?></td>
+                                                <td><?php echo $pub->emailu ;?></td>
                                                 <td><?php echo $pub->password ;?></td>
                                                 <td><?php echo $pub->libelle ;?></td>
                                                 <td>
                                                 <?php
 
-                                                    if($pub->etat==1 )
+                                                    if($pub->etatu==1 )
                                                     {
                                                         echo '<h3><i class="fa fa-circle" style="color: #24caa1;"></i></h3>';
 

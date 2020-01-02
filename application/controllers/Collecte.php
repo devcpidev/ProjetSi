@@ -42,10 +42,11 @@ class Collecte extends CI_Controller
 
         //restrict users to go to home if not logged in
         if($this->session->userdata('user')){
-           
+            $user = $this->session->userdata('idUser');
+            $data['infos'] = $this->bien->mesCollectes($user);
             $this->load->view('accueil/header.php');
-           $this->load->view('collecte/listecollecte');
-           $this->load->view('accueil/footer.php');
+            $this->load->view('collecte/listecollecte',$data);
+            $this->load->view('accueil/footer.php');
         }
         else{
             redirect('/');
@@ -134,7 +135,17 @@ class Collecte extends CI_Controller
         $buanderie = $this->input->post('buanderie');
         $ascenseur = $this->input->post('ascenseur');
         $studiositue = $this->input->post('studiositue');
-        
+        $broutep = $this->input->post('broutep');
+        $broute = $this->input->post('broute');
+        $angle = $this->input->post('angle');
+        $loinmarche = $this->input->post('loinmarche');
+        $presmarche = $this->input->post('presmarche');
+        $loinculte = $this->input->post('loinculte');
+        $presculte = $this->input->post('presculte');
+        $loinecole = $this->input->post('loinecole');
+        $presecole = $this->input->post('presecole');
+
+           
 
         $dataproprietaire= array(
             'nom' => $nom,
@@ -161,287 +172,296 @@ class Collecte extends CI_Controller
 
         // fin
 
+        //création du numero de dossier
+        $max =  $this->bien->getMaxidP();
+        $date = date("Y-d");
+        $numdossier = "zu"."".$date."".$max;
+
         if( ($typebienbati==1 && $collaboration==1) || ($typebienbati==2 && $collaboration==1) || ($typebienbati==3 && $collaboration==1) || ($typebienbati==4 && $collaboration==1) || ($typebienbati==5 && $collaboration==1) || ($typebienbati==6 && $collaboration==1) || ($typebienbati==7 && $collaboration==1)){
             
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
+            echo "yes";
+            //insertion du proprietaire
+            $prop = $this->bien->addProprietaire($dataproprietaire);
 
-            }else {
-                echo "yes";
-                //insertion du proprietaire
-                $prop = $this->bien->addProprietaire($dataproprietaire);
-
-                $datacollecte = array(
-                    'adresse' => $adresse,
-                    'nature' =>$nature,
-                    'usagebienbati' => $usagebienbati,
-                    'typebienbati' => $typebienbati,
-                    'nbpieces' => $nbpieces,
-                    'nbtoilettes' => $nbtoilettes,
-                    'jardin' => $jardin,
-                    'nbgarage' => $nbgarage,
-                    'typecuisine' => $typecuisine,
-                    'etatdroitreel' => $etatdroitreel,
-                    'actedevente' => $actedevente,
-                    'autorisationcons' => $autorisationcons,
-                    'planbetonarme' => $planbetonarme,
-                    'planarchi' => $planarchi,
-                    'planindividuelap' => $planindividuelap,
-                    'autorisationbail' => $autorisationbail,
-                    'deliberationind' => $deliberationind,
-                    'attestbail' => $attestbail,
-                    'procceder' => $procceder,
-                    'zone' => $zone,
-                    'collaboration' => $collaboration,
-                    'proprietaire' => $prop,
-                    'titreprop' => $titreprop,
-                    'cnibailleur' => $cnibailleur,
-                    'autresdoc' => $autresdoc,
-                    'plansite' => $plansite,
-                    'autreselemproc' => $autreselemproc,
-                    'nbcours' => $nbcours,
-                    'piscine' => $piscine,
-                    'typeimmeuble' => $typeimmeuble,
-                    'garage' => $garage,
-                    'studiositue' => $studiositue,
-                    'buanderie' => $buanderie,
-                    'balcon' => $balcon,
-                    'ascenseur' => $ascenseur,
-                    'document' => $_FILES['document']['name']
-                );
-                if($prop!=0){
-                    $prod = $this->bien->saveProduit($datacollecte);
-                    if($prod!=0){
-                        $detais = array(
-                            'utilisateur' =>    $this->session->userdata('idUSer'),
-                            'produit' =>$prod,
-                            'tache' => 1
-                        );
-                    }
+            $datacollecte = array(
+                'adresse' => $adresse,
+                'nature' =>$nature,
+                'usagebienbati' => $usagebienbati,
+                'typebienbati' => $typebienbati,
+                'nbpieces' => $nbpieces,
+                'nbtoilettes' => $nbtoilettes,
+                'jardin' => $jardin,
+                'nbgarage' => $nbgarage,
+                'typecuisine' => $typecuisine,
+                'etatdroitreel' => $etatdroitreel,
+                'actedevente' => $actedevente,
+                'autorisationcons' => $autorisationcons,
+                'planbetonarme' => $planbetonarme,
+                'planarchi' => $planarchi,
+                'planindividuelap' => $planindividuelap,
+                'autorisationbail' => $autorisationbail,
+                'deliberationind' => $deliberationind,
+                'attestbail' => $attestbail,
+                'procceder' => $procceder,
+                'zone' => $zone,
+                'collaboration' => $collaboration,
+                'proprietaire' => $prop,
+                'titreprop' => $titreprop,
+                'cnibailleur' => $cnibailleur,
+                'autresdoc' => $autresdoc,
+                'plansite' => $plansite,
+                'autreselemproc' => $autreselemproc,
+                'nbcours' => $nbcours,
+                'piscine' => $piscine,
+                'typeimmeuble' => $typeimmeuble,
+                'garage' => $garage,
+                'studiositue' => $studiositue,
+                'buanderie' => $buanderie,
+                'balcon' => $balcon,
+                'ascenseur' => $ascenseur,
+                'broutep' => $broutep,
+                'broute' =>$broute,
+                'angle' => $angle,
+                'loinmarche' => $loinmarche,
+                'presmarche' => $presmarche,
+                'loinculte' =>$loinculte,
+                'presculte' => $presculte,
+                'loinecole' =>$loinecole,
+                'presecole' => $presecole,
+                'numdossier' => $numdossier
+               
+            );
+            if($prop!=0){
+                $prod = $this->bien->saveProduit($datacollecte);
+                if($prod!=0){
+                    $user = $this->session->userdata('idUser');
+                    echo "ok : ".$this->session->userdata('idUser');
+                    $details = array(
+                        'utilisateur' => $user,
+                        'produit' =>$prod,
+                        'tache' => 1
+                    );
+                    $this->bien->insertDetails($details);
+                    $this->uploadFile();
                 }
             }
             
         }
         if(($typebienbati==1 && ($collaboration==2 || $collaboration==3) ) || ($typebienbati==2 && ($collaboration==2 || $collaboration==3)) || ($typebienbati==3 && ($collaboration==2 || $collaboration==3)) || ($typebienbati==4 && ($collaboration==2 || $collaboration==3)) || ($typebienbati==5 && ($collaboration==2 || $collaboration==3)) || ($typebienbati==6 && ($collaboration==2 || $collaboration==3)) || ($typebienbati==7 && ($collaboration==2 || $collaboration==3)) ){
-            
-
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
-
-            }else {
-                echo "wooy";
+            echo "wooy";
                
-                //insertion du proprietaire
-                $prop = $this->bien->addProprietaire($dataproprietaire);
+            //insertion du proprietaire
+            $prop = $this->bien->addProprietaire($dataproprietaire);
 
-                $datacollecte = array(
-                    'adresse' => $adresse,
-                    'nature' =>$nature,
-                    'usagebienbati' => $usagebienbati,
-                    'typebienbati' => $typebienbati,
-                    'nbpieces' => $nbpieces,
-                    'nbtoilettes' => $nbtoilettes,
-                    'jardin' => $jardin,
-                    'nbgarage' => $nbgarage,
-                    'typecuisine' => $typecuisine,
-                    'etatdroitreel' => $etatdroitreel,
-                    'actedevente' => $actedevente,
-                    'autorisationcons' => $autorisationcons,
-                    'planbetonarme' => $planbetonarme,
-                    'planarchi' => $planarchi,
-                    'planindividuelap' => $planindividuelap,
-                    'autorisationbail' => $autorisationbail,
-                    'deliberationind' => $deliberationind,
-                    'attestbail' => $attestbail,
-                    'procceder' => $procceder,
-                    'zone' => $zone,
-                    'collaboration' => $collaboration,
-                    'proprietaire' => $prop,
-                    'titreprop' => $titreprop,
-                    'cnibailleur' => $cnibailleur,
-                    'nbcours' => $nbcours,
-                    'piscine' => $piscine,
-                    'typeimmeuble' => $typeimmeuble,
-                    'garage' => $garage,
-                    'studiositue' => $studiositue,
-                    'buanderie' => $buanderie,
-                    'balcon' => $balcon,
-                    'ascenseur' => $ascenseur,
-                    'autresdoc' => $autresdoc,
-                    'document' => $_FILES['document']['name']
-                );
-                
-                if($prop!=0){
-                    $prod = $this->bien->saveProduit($datacollecte);
-                    if($prod!=0){
-                        $detais = array(
-                            'utilisateur' => $this->session->userdata('idUSer'),
-                            'produit' =>$prod,
-                            'tache' => 1
-                        );
-                    }
-                }
-            }
+            $datacollecte = array(
+                'adresse' => $adresse,
+                'nature' =>$nature,
+                'usagebienbati' => $usagebienbati,
+                'typebienbati' => $typebienbati,
+                'nbpieces' => $nbpieces,
+                'nbtoilettes' => $nbtoilettes,
+                'jardin' => $jardin,
+                'nbgarage' => $nbgarage,
+                'typecuisine' => $typecuisine,
+                'etatdroitreel' => $etatdroitreel,
+                'actedevente' => $actedevente,
+                'autorisationcons' => $autorisationcons,
+                'planbetonarme' => $planbetonarme,
+                'planarchi' => $planarchi,
+                'planindividuelap' => $planindividuelap,
+                'autorisationbail' => $autorisationbail,
+                'deliberationind' => $deliberationind,
+                'attestbail' => $attestbail,
+                'procceder' => $procceder,
+                'zone' => $zone,
+                'collaboration' => $collaboration,
+                'proprietaire' => $prop,
+                'titreprop' => $titreprop,
+                'cnibailleur' => $cnibailleur,
+                'nbcours' => $nbcours,
+                'piscine' => $piscine,
+                'typeimmeuble' => $typeimmeuble,
+                'garage' => $garage,
+                'studiositue' => $studiositue,
+                'buanderie' => $buanderie,
+                'balcon' => $balcon,
+                'ascenseur' => $ascenseur,
+                'autresdoc' => $autresdoc,
+                'broutep' => $broutep,
+                'broute' =>$broute,
+                'angle' => $angle,
+                'loinmarche' => $loinmarche,
+                'presmarche' => $presmarche,
+                'loinculte' =>$loinculte,
+                'presculte' => $presculte,
+                'loinecole' =>$loinecole,
+                'presecole' => $presecole,
+                'numdossier' => $numdossier
+            );
             
+            if($prop!=0){
+                $prod = $this->bien->saveProduit($datacollecte);
+                if($prod!=0){
+                    $user = $this->session->userdata('idUser');
+                    echo "ok : ".$this->session->userdata('idUser');
+                    $details = array(
+                        'utilisateur' => $user,
+                        'produit' =>$prod,
+                        'tache' => 1
+                    );
+                    $this->bien->insertDetails($details);
+                    $this->uploadFile();
+                }
+            }            
         }
 
         if(($typebienbati==1 && ($collaboration==4 || $collaboration==6)) || ($typebienbati==2 && ($collaboration==4 || $collaboration==6)) || ($typebienbati==3 && ($collaboration==4 || $collaboration==6)) || ($typebienbati==4 && ($collaboration==4 || $collaboration==6)) || ($typebienbati==5 && ($collaboration==4 || $collaboration==6)) || ($typebienbati==6 && ($collaboration==4 || $collaboration==6)) || ($typebienbati==7 && ($collaboration==4 || $collaboration==6))){
-            
-
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
-
-            }else {
-                echo "wo 4";
+            echo "wo 4";
                
-                //insertion du proprietaire
-                $prop = $this->bien->addProprietaire($dataproprietaire);
+            //insertion du proprietaire
+            $prop = $this->bien->addProprietaire($dataproprietaire);
 
-                $datacollecte = array(
-                    'adresse' => $adresse,
-                    'nature' =>$nature,
-                    'usagebienbati' => $usagebienbati,
-                    'typebienbati' => $typebienbati,
-                    'nbpieces' => $nbpieces,
-                    'nbtoilettes' => $nbtoilettes,
-                    'jardin' => $jardin,
-                    'nbgarage' => $nbgarage,
-                    'typecuisine' => $typecuisine,
-                    'etatdroitreel' => $etatdroitreel,
-                    'actedevente' => $actedevente,
-                    'autorisationcons' => $autorisationcons,
-                    'planbetonarme' => $planbetonarme,
-                    'planarchi' => $planarchi,
-                    'planindividuelap' => $planindividuelap,
-                    'autorisationbail' => $autorisationbail,
-                    'deliberationind' => $deliberationind,
-                    'attestbail' => $attestbail,
-                    'procceder' => $procceder,
-                    'zone' => $zone,
-                    'collaboration' => $collaboration,
-                    'proprietaire' => $prop,
-                    'titreprop' => $titreprop,
-                    'cnibailleur' => $cnibailleur,
-                    'autresdoc' => $autresdoc,
-                    'nbcours' => $nbcours,
-                    'piscine' => $piscine,
-                    'typeimmeuble' => $typeimmeuble,
-                    'autreselemproc' => $autreselemproc,
-                    'garage' => $garage,
-                    'studiositue' => $studiositue,
-                    'buanderie' => $buanderie,
-                    'balcon' => $balcon,
-                    'ascenseur' => $ascenseur,
-                    'document' => $_FILES['document']['name']
-                );
-                
-                if($prop!=0){
-                    $prod = $this->bien->saveProduit($datacollecte);
-                    if($prod!=0){
-                        $detais = array(
-                            'utilisateur' => $this->session->userdata('idUSer'),
-                            'produit' =>$prod,
-                            'tache' => 1
-                        );
-                    }
+            $datacollecte = array(
+                'adresse' => $adresse,
+                'nature' =>$nature,
+                'usagebienbati' => $usagebienbati,
+                'typebienbati' => $typebienbati,
+                'nbpieces' => $nbpieces,
+                'nbtoilettes' => $nbtoilettes,
+                'jardin' => $jardin,
+                'nbgarage' => $nbgarage,
+                'typecuisine' => $typecuisine,
+                'etatdroitreel' => $etatdroitreel,
+                'actedevente' => $actedevente,
+                'autorisationcons' => $autorisationcons,
+                'planbetonarme' => $planbetonarme,
+                'planarchi' => $planarchi,
+                'planindividuelap' => $planindividuelap,
+                'autorisationbail' => $autorisationbail,
+                'deliberationind' => $deliberationind,
+                'attestbail' => $attestbail,
+                'procceder' => $procceder,
+                'zone' => $zone,
+                'collaboration' => $collaboration,
+                'proprietaire' => $prop,
+                'titreprop' => $titreprop,
+                'cnibailleur' => $cnibailleur,
+                'autresdoc' => $autresdoc,
+                'nbcours' => $nbcours,
+                'piscine' => $piscine,
+                'typeimmeuble' => $typeimmeuble,
+                'autreselemproc' => $autreselemproc,
+                'garage' => $garage,
+                'studiositue' => $studiositue,
+                'buanderie' => $buanderie,
+                'balcon' => $balcon,
+                'ascenseur' => $ascenseur,
+                'broutep' => $broutep,
+                'broute' =>$broute,
+                'angle' => $angle,
+                'loinmarche' => $loinmarche,
+                'presmarche' => $presmarche,
+                'loinculte' =>$loinculte,
+                'presculte' => $presculte,
+                'loinecole' =>$loinecole,
+                'presecole' => $presecole,
+                'numdossier' => $numdossier
+            );
+            
+            if($prop!=0){
+                $prod = $this->bien->saveProduit($datacollecte);
+                if($prod!=0){
+                    $user = $this->session->userdata('idUser');
+                    echo "ok : ".$this->session->userdata('idUser');
+                    $details = array(
+                        'utilisateur' => $user,
+                        'produit' =>$prod,
+                        'tache' => 1
+                    );
+                    $this->bien->insertDetails($details);
+                    $this->uploadFile();
                 }
             }
             
         }
 
         if(($typebienbati==1 && $collaboration==5) || ($typebienbati==2 &&$collaboration==5) || ($typebienbati==3  &&$collaboration==5) || ($typebienbati==4  &&$collaboration==5) || ($typebienbati==5  &&$collaboration==5) || ($typebienbati==6  &&$collaboration==5) || ($typebienbati==7  &&$collaboration==5)){
-            
-
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
-
-            }else {
-                echo "wo 5";
+            echo "wo 5";
                
-                //insertion du proprietaire
-                $prop = $this->bien->addProprietaire($dataproprietaire);
+            //insertion du proprietaire
+            $prop = $this->bien->addProprietaire($dataproprietaire);
 
-                $datacollecte = array(
-                    'adresse' => $adresse,
-                    'nature' =>$nature,
-                    'usagebienbati' => $usagebienbati,
-                    'typebienbati' => $typebienbati,
-                    'nbpieces' => $nbpieces,
-                    'nbtoilettes' => $nbtoilettes,
-                    'jardin' => $jardin,
-                    'nbgarage' => $nbgarage,
-                    'typecuisine' => $typecuisine,
-                    'etatdroitreel' => $etatdroitreel,
-                    'actedevente' => $actedevente,
-                    'autorisationcons' => $autorisationcons,
-                    'planbetonarme' => $planbetonarme,
-                    'planarchi' => $planarchi,
-                    'planindividuelap' => $planindividuelap,
-                    'autorisationbail' => $autorisationbail,
-                    'deliberationind' => $deliberationind,
-                    'attestbail' => $attestbail,
-                    'procceder' => $procceder,
-                    'zone' => $zone,
-                    'collaboration' => $collaboration,
-                    'proprietaire' => $prop,
-                    'titreprop' => $titreprop,
-                    'cnibailleur' => $cnibailleur,
-                    'autresdoc' => $autresdoc,
-                    'planelec' => $planelec,
-                    'planplomberie' => $planplomberie,
-                    'cahierdesctechnique' => $cahierdesctechnique,
-                    'fichinsctechnique' => $fichinsctechnique,
-                    'etudefinancement' => $etudefinancement,
-                    'demandeautmaire' => $demandeautmaire,
-                    'nbcours' => $nbcours,
-                    'piscine' => $piscine,
-                    'typeimmeuble' => $typeimmeuble,
-                    'garage' => $garage,
-                    'studiositue' => $studiositue,
-                    'buanderie' => $buanderie,
-                    'balcon' => $balcon,
-                    'ascenseur' => $ascenseur,
-                    'document' => $_FILES['document']['name']
-                );
+            $datacollecte = array(
+                'adresse' => $adresse,
+                'nature' =>$nature,
+                'usagebienbati' => $usagebienbati,
+                'typebienbati' => $typebienbati,
+                'nbpieces' => $nbpieces,
+                'nbtoilettes' => $nbtoilettes,
+                'jardin' => $jardin,
+                'nbgarage' => $nbgarage,
+                'typecuisine' => $typecuisine,
+                'etatdroitreel' => $etatdroitreel,
+                'actedevente' => $actedevente,
+                'autorisationcons' => $autorisationcons,
+                'planbetonarme' => $planbetonarme,
+                'planarchi' => $planarchi,
+                'planindividuelap' => $planindividuelap,
+                'autorisationbail' => $autorisationbail,
+                'deliberationind' => $deliberationind,
+                'attestbail' => $attestbail,
+                'procceder' => $procceder,
+                'zone' => $zone,
+                'collaboration' => $collaboration,
+                'proprietaire' => $prop,
+                'titreprop' => $titreprop,
+                'cnibailleur' => $cnibailleur,
+                'autresdoc' => $autresdoc,
+                'planelec' => $planelec,
+                'planplomberie' => $planplomberie,
+                'cahierdesctechnique' => $cahierdesctechnique,
+                'fichinsctechnique' => $fichinsctechnique,
+                'etudefinancement' => $etudefinancement,
+                'demandeautmaire' => $demandeautmaire,
+                'nbcours' => $nbcours,
+                'piscine' => $piscine,
+                'typeimmeuble' => $typeimmeuble,
+                'garage' => $garage,
+                'studiositue' => $studiositue,
+                'buanderie' => $buanderie,
+                'balcon' => $balcon,
+                'ascenseur' => $ascenseur,
+                'broutep' => $broutep,
+                'broute' =>$broute,
+                'angle' => $angle,
+                'loinmarche' => $loinmarche,
+                'presmarche' => $presmarche,
+                'loinculte' =>$loinculte,
+                'presculte' => $presculte,
+                'loinecole' =>$loinecole,
+                'presecole' => $presecole,
+                'numdossier' => $numdossier
+            );
 
-                $planelec = $this->input->post('planelec');
-                $planplomberie = $this->input->post('planplomberie');
-                $cahierdesctechnique = $this->input->post('cahierdesctechnique');
-                $fichinsctechnique = $this->input->post('fichinsctechnique');
-                $etudefinancement = $this->input->post('etudefinancement');
-                
-                if($prop!=0){
-                    $prod = $this->bien->saveProduit($datacollecte);
-                    if($prod!=0){
-                        $detais = array(
-                            'utilisateur' => $this->session->userdata('idUSer'),
-                            'produit' =>$prod,
-                            'tache' => 1
-                        );
-                    }
+            if($prop!=0){
+                $prod = $this->bien->saveProduit($datacollecte);
+                if($prod!=0){
+                    $user = $this->session->userdata('idUser');
+                    echo "ok : ".$this->session->userdata('idUser');
+                    $details = array(
+                        'utilisateur' => $user,
+                        'produit' =>$prod,
+                        'tache' => 1
+                    );
+                    $this->bien->insertDetails($details);
+                    $this->uploadFile();
                 }
             }
             
         }
 
         if(($typebienbati==1 && $collaboration==7) || ($typebienbati==2 && $collaboration==7) || ($typebienbati==3 && $collaboration==7) || ($typebienbati==4 && $collaboration==7) || ($typebienbati==5 && $collaboration==7) || ($typebienbati==6 && $collaboration==7) || ($typebienbati==7 && $collaboration==7)){
-            
-
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
-
-            }else {
-                echo "wo 7";
+            echo "wo 7";
                
                 //insertion du proprietaire
                 $prop = $this->bien->addProprietaire($dataproprietaire);
@@ -488,35 +508,38 @@ class Collecte extends CI_Controller
                     'buanderie' => $buanderie,
                     'balcon' => $balcon,
                     'ascenseur' => $ascenseur,
-                    'document' => $_FILES['document']['name']
+                    'broutep' => $broutep,
+                    'broute' =>$broute,
+                    'angle' => $angle,
+                    'loinmarche' => $loinmarche,
+                    'presmarche' => $presmarche,
+                    'loinculte' =>$loinculte,
+                    'presculte' => $presculte,
+                    'loinecole' =>$loinecole,
+                    'presecole' => $presecole,
+                    'numdossier' => $numdossier
                 );
-
-               
-                
+             
                 if($prop!=0){
                     $prod = $this->bien->saveProduit($datacollecte);
                     if($prod!=0){
-                        $detais = array(
-                            'utilisateur' => $this->session->userdata('idUSer'),
+                        $user = $this->session->userdata('idUser');
+                        echo "ok : ".$this->session->userdata('idUser');
+                        $details = array(
+                            'utilisateur' => $user,
                             'produit' =>$prod,
                             'tache' => 1
                         );
+                        $this->bien->insertDetails($details);
+                      $this->uploadFile();
+                        
                     }
                 }
-            }
             
         }
 
         if(($typebienbati==1 && $collaboration==8) || ($typebienbati==2 && $collaboration==8) || ($typebienbati==3 && $collaboration==8) || ($typebienbati==4 && $collaboration==8) || ($typebienbati==5 && $collaboration==8)  || ($typebienbati==6 && $collaboration==8) || ($typebienbati==7 && $collaboration==8)){
-            
-
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
-
-            }else {
-                echo "wo 8";
+            echo "wo 8";
                
                 //insertion du proprietaire
                 $prop = $this->bien->addProprietaire($dataproprietaire);
@@ -579,6 +602,15 @@ class Collecte extends CI_Controller
                     'buanderie' => $buanderie,
                     'balcon' => $balcon,
                     'ascenseur' => $ascenseur,
+                    'broutep' => $broutep,
+                    'broute' =>$broute,
+                    'angle' => $angle,
+                    'loinmarche' => $loinmarche,
+                    'presmarche' => $presmarche,
+                    'loinculte' =>$loinculte,
+                    'presculte' => $presculte,
+                    'loinecole' =>$loinecole,
+                    'presecole' => $presecole,
                     'document' => $_FILES['document']['name']
                 );
 
@@ -586,26 +618,20 @@ class Collecte extends CI_Controller
                 if($prop!=0){
                     $prod = $this->bien->saveProduit($datacollecte);
                     if($prod!=0){
-                        $detais = array(
-                            'utilisateur' => $this->session->userdata('idUSer'),
+                        $user = $this->session->userdata('idUser');
+                        echo "ok : ".$this->session->userdata('idUser');
+                        $details = array(
+                            'utilisateur' => $user,
                             'produit' =>$prod,
                             'tache' => 1
                         );
+                        $this->bien->insertDetails($details);
+                    $this->uploadFile();
                     }
                 }
-            }
-            
         }
         if(($typebienbati==1 && $collaboration==9) || ($typebienbati==2 && $collaboration==9) || ($typebienbati==3 && $collaboration==9) || ($typebienbati==4 && $collaboration==9) || ($typebienbati==5 && $collaboration==9) || ($typebienbati==6 && $collaboration==9) || ($typebienbati==7 && $collaboration==9)){
-            
-
-            if (!$this->upload->do_upload('document'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                echo "dzezze".$this->upload->display_errors();
-
-            }else {
-                echo "wo 9";
+            echo "wo 9";
                
                 //insertion du proprietaire
                 $prop = $this->bien->addProprietaire($dataproprietaire);
@@ -674,6 +700,15 @@ class Collecte extends CI_Controller
                     'buanderie' => $buanderie,
                     'balcon' => $balcon,
                     'ascenseur' => $ascenseur,
+                    'broutep' => $broutep,
+                    'broute' =>$broute,
+                    'angle' => $angle,
+                    'loinmarche' => $loinmarche,
+                    'presmarche' => $presmarche,
+                    'loinculte' =>$loinculte,
+                    'presculte' => $presculte,
+                    'loinecole' =>$loinecole,
+                    'presecole' => $presecole,
                     'document' => $_FILES['document']['name']
                 );
 
@@ -681,15 +716,63 @@ class Collecte extends CI_Controller
                 if($prop!=0){
                     $prod = $this->bien->saveProduit($datacollecte);
                     if($prod!=0){
-                        $detais = array(
-                            'utilisateur' => $this->session->userdata('idUSer'),
+                        $user = $this->session->userdata('idUser');
+                        echo "ok : ".$this->session->userdata('idUser');
+                        $details = array(
+                            'utilisateur' => $user,
                             'produit' =>$prod,
                             'tache' => 1
                         );
+                        $this->bien->insertDetails($details);
+                    $this->uploadFile();
                     }
                 }
+        }
+    }
+
+    public function uploadFile(){
+        $index = 0;
+        $success_count = 0;
+        foreach($_FILES['document']['name'] as $key =>  $val){
+            $index++;
+            //Recuperation de l'extension
+            $tmp = explode('.', $_FILES["document"]["name"][$key]);
+            $file_ext = end($tmp);
+
+            // Creation du nouveau nom et du chemin
+            $id = $this->bien->getMaxidP();
+            $new_filename = rand(0,500000).'_document_' . $index . '_'. $id . '.'. $file_ext;
+            $path = "upload/". $new_filename;
+       
+            //Upload
+            if(move_uploaded_file($_FILES["document"]["tmp_name"][$key], $path)){
+                if($this->bien->setFiles($index,$new_filename,$id)){
+                    $success_count++;
+                 }    
+            };
+        }
+        if($success_count == 2){
+            echo "file uploaded";
+        }
+    }
+
+    public function download(){
+       if (isset($_GET['numdossier'])) {
+            $numdossier = $_GET['numdossier'];
+            $file = $this->bien->getDocs($numdossier);
+          
+            $filepath = 'upload/' . $file->document1;
+            if(file_exists($filepath)){
+                header('Content-Description: File Transfer');
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename=' . basename($filepath));
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize('upload/' . $file->document1));
+                readfile('upload/' . $file->document1);
             }
-            
+
         }
     }
     
