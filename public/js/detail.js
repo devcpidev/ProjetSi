@@ -64,6 +64,6 @@ $(document).ready(function(){
                 $('#loginu').val(data.login);    
             }
         });
-        window.opener.location.reload();
+        
     })
 })
