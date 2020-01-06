@@ -775,6 +775,14 @@ class Collecte extends CI_Controller
 
         }
     }
+
+    public function details(){
+        if (isset($_GET['numdossier'])) {
+           $numdossier = $_GET['numdossier'];
+           $data = $this->bien->getElemByNumdossier($numdossier);
+           echo json_encode($data);
+        }
+    }
     
 
 

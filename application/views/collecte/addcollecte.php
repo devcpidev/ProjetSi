@@ -15,27 +15,27 @@
                                         <div class="row">
                                             <form method="POST" action="<?php echo base_url();?>index.php/Collecte/save" enctype="multipart/form-data">   
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                             <input required type="text" class="form-control" name="nom" placeholder="Nom du Proprétaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="prenom" placeholder="prenom du proprietaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="tel" placeholder="prenom du proprietaire">
+                                                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i>(+221)</span>
+                                                            <input type="text" class="form-control" name="tel" placeholder="téléphone du propriétaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-mail" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="email" placeholder="email du proprietaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-address" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="adressesen" placeholder="adresse au senegal">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="nomrep" placeholder="nom du représenatnt">
                                                     </div>
                                                     <div class="input-group mg-b-15">
@@ -43,15 +43,15 @@
                                                             <input type="text" class="form-control" name="telrep" placeholder="téléphone du représenatnt">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="emailrep" placeholder="email du représenatnt">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="adresserep" placeholder="adresse du représenatnt">
                                                     </div>
                                                     <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-signal" aria-hidden="true"></i></span>
                                                             <select class="form-control"name="zone" id="zone">
                                                             <option value="">selectionez la zone</option>
                                                                 <?php
@@ -64,7 +64,7 @@
                                                             </select>
                                                         </div>       
                                                         <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-paperclip" aria-hidden="true"></i></span>
                                                             <select  class="form-control" name="nature" id="nature">
                                                             <option value="">SELECTIONNEZ LA NATURE JURIDIQUE</option>
                                                             <option value="TF Prive">titre foncier prive</option>
@@ -76,11 +76,12 @@
                                                             </select>
                                                         </div>
                                                         <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-map" aria-hidden="true"></i></span>
                                                             <input type="text" class="form-control" name="adresse" placeholder="Localisation du produit">
                                                         </div>
                                                         <div class="input-group mg-b-15">
-                                                            <div class="form-check">
+                                                            <!-- <div class="form-check"> -->
+                                                                <span class="input-group-addon"><i class="fa fa-position" aria-hidden="true"></i>
                                                                 <input type="checkbox" class="form-check-input" name="broutep" value="Bordure Route Principale">
                                                                 <label class="form-check-label" for="broutep" >Bordure Route Principale</label>
                                                                 <input type="checkbox" class="form-check-input" name="broute" value="Bordure Route">
@@ -97,10 +98,10 @@
                                                                 <label class="form-check-label" for="presculte">Près d'un lieu culte</label>
                                                                 <input type="checkbox" class="form-check-input" name="loinecole" value="Loin d'une ecole">
                                                                 <label class="form-check-label" for="loinecole">Loin d'un ecole</label>
-                                                                <input type="checkbox" class="form-check-input" name="presecole" value="Pres d'une ecole">
-                                                                <label class="form-check-label" for="presecole">Près d'une ecole</label>
+                                                                <input type="checkbox" class="form-check-input" name="presecole" value="Pres d'une ecole"><br>
+                                                                <label class="form-check-label" for="presecole">Près d'une ecole</label><br></span>
                                                             </div>
-                                                            <span class="input-group-addon"><i class="fa fa-adresse" aria-hidden="true"></i></span>
+                                                            <!-- <span class="input-group-addon"><i class="fa fa-adresse" aria-hidden="true"></i></span>
                                                             <select  class="form-control" name="positionnement" id="positionnement">
                                                             <option value="">position de votre bien</option>
                                                             <option value="Bordure Route Principale">Bordure Route Principale</option>
@@ -111,10 +112,10 @@
                                                             <option value="Pres d'un lieu culte">Pres d'un lieu culte</option>
                                                             <option value="Loin d'un ecole">Loin d'un ecole</option>
                                                             <option value="Pres d'un ecole">Pres d'un ecole</option>
-                                                            </select>
-                                                        </div>
+                                                            </select> -->
+                                                        <!-- </div> -->
                                                         <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-adresse" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-wrench" aria-hidden="true"></i></span>
                                                             <select class="form-control" name="usagebienbati" id="usagebienbati">
                                                             <option value="">Usage du bien</option>
                                                             <option value="usage d'habitation">usage d'habitation</option>
@@ -125,7 +126,7 @@
                                                         </div>
                                                        
                                                         <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
                                                             <select class="form-control"name="typebienbati" id="typebienbati">
                                                             <option value="">selectionez le type de bien bati</option>
                                                                 <?php
@@ -171,7 +172,7 @@
                                                             
                                                         </div>
                                                         <div class="input-group mg-b-15">
-                                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                            <span class="input-group-addon"><i class="fa fa-people-carry" aria-hidden="true"></i></span>
                                                             <select  class='form-control' name="collaboration" id="collaboration">
                                                             <option value="">Type de collaboration avec CPI</option>
                                                                 <?php

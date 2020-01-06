@@ -68,5 +68,10 @@
             $query = $this->db->query("SELECT  document1,document2 FROM collecte c WHERE c.numdossier='$dossier' ");
             return $query->row();
         }
+
+        public function getElemByNumdossier($dossier){
+            $query = $this->db->query("SELECT  * FROM collecte c WHERE c.numdossier='$dossier' ");
+            return $query->row();
+        }
     }
 ?>
