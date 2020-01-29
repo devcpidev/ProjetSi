@@ -51,6 +51,11 @@
             $this->db->insert('proprietaire',$data);
             return $this->db->insert_id();
         }
+        public  function addDocument($data)
+		{
+			$this->db->insert('docservice',$data);
+			return $this->db->insert_id();
+		}
         public function saveProduit($data)
         {
             $this->db->insert('produit',$data);

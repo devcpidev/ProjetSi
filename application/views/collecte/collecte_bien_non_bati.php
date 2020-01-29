@@ -26,7 +26,7 @@
                                         <div class="product-cart-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
-                <form method="POST" action="<?php echo base_url();?>index.php/Collecte/save" enctype="multipart/form-data">
+                <form method="POST" action="<?php echo base_url();?>index.php/NonBati/save" enctype="multipart/form-data">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 h-auto">
                         <div class="product-cart-inner">
                             <div id="example-basic" >
@@ -81,7 +81,7 @@
                                                     </div>
                                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="superficie" placeholder="Superficie du bien">
+                                                            <input type="text" class="form-control" name="surface" placeholder="Superficie du bien">
                                                     </div>
                                     </div>
                                 </section>
@@ -170,7 +170,7 @@
                                     <div class="product-delivary">
                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                            <select class="form-control"name="typebienbati" id="typebienbati" >
+                                                            <select class="form-control"name="typebiennonbati" id="typebiennonbati" >
                                                             <option value="">selectionez le type de bien non bati</option>
                                                                 <?php
                                                                 foreach ($type as $t)
