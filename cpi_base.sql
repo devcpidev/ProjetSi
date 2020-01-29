@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 27 jan. 2020 à 04:20
+-- Généré le :  mer. 29 jan. 2020 à 14:29
 -- Version du serveur :  10.1.32-MariaDB
 -- Version de PHP :  7.2.5
 
@@ -33,6 +33,19 @@ CREATE TABLE `bureau` (
   `libelle` varchar(500) NOT NULL,
   `service` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `bureau`
+--
+
+INSERT INTO `bureau` (`idBureau`, `libelle`, `service`) VALUES
+(1, 'MANAGEMENT ET SUPERVISION', 1),
+(2, 'PROSPECTION ZONE URBAINE', 1),
+(3, 'PROSPECTION ZONE PERI  URBAINE', 4),
+(4, 'RECEPTION FRONT OFFICE', 2),
+(5, 'RECEPTION BACK OFFICE', 2),
+(6, 'Etude et traitement', 3),
+(7, 'COLLECTE ET TRAITEMENT BDD PROSPECTS', 3);
 
 -- --------------------------------------------------------
 
@@ -217,16 +230,13 @@ CREATE TABLE `cpidepartement` (
 --
 
 INSERT INTO `cpidepartement` (`idDept`, `libelle`) VALUES
-(1, 'COMMERCIAL MARKETING ET COMMUNICATION'),
-(2, 'LOCATION GERANCE INTERMEDIATION'),
-(3, 'RECHERCHE DE FINANCEMENT BOURSE CHANGEMENT INSTITUTIONNEL'),
-(4, 'FINANCE COMPTABILIE ACHAT ET APPROVISIONNEMENT'),
-(5, 'ADMINISTRATION AFFAIRE JURIDIQUE RH SECURITE HYGIENE ARCHIVE ET DOC'),
-(6, 'CABINET AG'),
-(7, 'COURRIER'),
-(8, 'FONCIER ETUDE TECHNIQUE ET PROGRAMME IMMO'),
-(9, 'ORGANISATION LOGIGRAMME ET PLAN D\'AFFAIRE'),
-(10, 'INFORMATIQUE ET SYSTÈME D\'INFORMATION');
+(1, 'DAGP'),
+(2, 'DMC'),
+(3, 'DEPARTEMENT FONCIER'),
+(4, 'DEPARTEMENT PROGRAMME IMMO'),
+(5, 'DSI'),
+(6, 'Controle achat appro logistique '),
+(7, 'Administration Juridique RH securite');
 
 -- --------------------------------------------------------
 
@@ -658,6 +668,18 @@ CREATE TABLE `service` (
   `departement` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `service`
+--
+
+INSERT INTO `service` (`idService`, `service_name`, `departement`) VALUES
+(1, 'Prospection zone Urbaine', 1),
+(2, 'Reception Front Office', 1),
+(3, 'Traitement', 1),
+(4, 'Prospection Zone Peri Urbaine', 1),
+(5, 'Reception Back Office', 1),
+(6, 'Prospection Client', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -850,7 +872,7 @@ INSERT INTO `utilisateur` (`idUser`, `nomu`, `telu`, `adresseu`, `emailu`, `pren
 (1, ' MBAYE', '773343173', 'Dakar', 'jamillaye@gmail.com', 'Jamil Laye', 'passer', 1, 2),
 (2, 'Cheikh', '774560987', 'Dakar', 'cheikh@gmail.com', 'diallo', 'passer', 1, 4),
 (3, 'Birane ', '775543423', 'Dakar ', 'gayebirane@gmail.com', 'Gaye', 'passer', 1, 1),
-(4, 'Diouf', '773326543', 'Dakar', 'fatou@gmail.com', 'Fatou', 'passer', 0, 3),
+(4, 'Diouf', '773326543', 'Dakar', 'fatou@gmail.com', 'Fatou', 'passer', 1, 3),
 (5, 'samb', '77335590', 'ngor', 'sallaminata@gmail.com', 'aminata', 'passer', 1, 1);
 
 -- --------------------------------------------------------
@@ -1044,7 +1066,7 @@ ALTER TABLE `zone`
 -- AUTO_INCREMENT pour la table `bureau`
 --
 ALTER TABLE `bureau`
-  MODIFY `idBureau` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBureau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `collaboration`
@@ -1056,7 +1078,7 @@ ALTER TABLE `collaboration`
 -- AUTO_INCREMENT pour la table `cpidepartement`
 --
 ALTER TABLE `cpidepartement`
-  MODIFY `idDept` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idDept` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `departement`
@@ -1104,7 +1126,7 @@ ALTER TABLE `region`
 -- AUTO_INCREMENT pour la table `service`
 --
 ALTER TABLE `service`
-  MODIFY `idService` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idService` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `tache`
@@ -1128,7 +1150,7 @@ ALTER TABLE `typebiennonbati`
 -- AUTO_INCREMENT pour la table `typeproduit`
 --
 ALTER TABLE `typeproduit`
-  MODIFY `idTypeProduit` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTypeProduit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `typeservices`
@@ -1146,13 +1168,13 @@ ALTER TABLE `typezone`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `zone`
 --
 ALTER TABLE `zone`
-  MODIFY `idZone` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idZone` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
