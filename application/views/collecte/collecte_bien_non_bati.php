@@ -8,9 +8,9 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i>   Bien  Non  Bati</a></li>
+                            
                                  
-                                    <li><a href="#INFORMATION"><i class="fa fa-commenting" aria-hidden="true"></i> Bien Bati</a></li>
+                                    <li><a href="#INFORMATION"><i class="fa fa-commenting" aria-hidden="true"></i> Bien Non Bati</a></li>
                                 </ul>
                                 <div id="myTabContent" class="tab-content custom-product-edit">
                                     <div class="product-tab-list tab-pane fade active in" id="description">
@@ -222,7 +222,7 @@
                                     <div class="payment-details">
                                         <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                            <select  class='form-control' name="collaboration" id="collaboration">
+                                                            <select  class='form-control' name="typeservices" id="typeservices">
                                                             <option value="">Services sollicités</option>
                                                                 <?php
                                                                 foreach ($services as $s)
@@ -272,3 +272,4 @@
             </div>
         </div>
 
+        <script src="<?php echo base_url();?>public/js/collecte_bien_non_bati.js"></script>

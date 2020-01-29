@@ -7,7 +7,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="review-tab-pro-inner">
     <ul id="myTab3" class="tab-review-design">
-        <li class="active"><a href="#DEPARTEMENT" >Département</a></li>
+        <li><a href="#DEPARTEMENT" >Département</a></li>
 
         <li><a href="#SERVICE"> Service</a></li>
 
@@ -55,10 +55,18 @@
                             <div class="product-status-wrap">
                                 <h4>Liste des Départements</h4>
                                 <div class="add-product">
+<<<<<<< HEAD
                                    
                             
                                
                         
+=======
+
+
+
+                                <a class="Alert Alert-color" href="#" data-toggle="modal" data-target="#AlertModalhdbgcl">Ajouter </a>
+
+>>>>>>> 39bc15689e1e4fb4400e05e29668d5c20c9d9f9a
                                 </div>
                                 <table>
                                     <tr>
@@ -867,13 +875,13 @@
 <!-- Modals Start-->
 <div class="login-form-area adminpro-pd mg-tb-15">
             <div class="container-fluid">
-                
-                
+
+
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        
-                       
-                        
+
+
+
                         <div id="AlertModalhdbgcl" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -884,6 +892,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-body">
+<<<<<<< HEAD
                                         
                                  <form method="Post" action="<?php echo base_url('index.php/organisation/saveDeptcpi') ?>">
                                      <div class="form-group">
@@ -895,6 +904,24 @@
                                     <input type="submit" class="btn btn-success btn-block loginbtn" value="Ajouter" />
                            
                                  </form>
+=======
+
+                                 <form action="#" id="loginForm">
+                            <div class="form-group">
+
+                                <input type="text" placeholder="libelle"  name="username"  class="form-control">
+
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" placeholder="Region"  name="username"  class="form-control">
+
+                            </div>
+
+                            <button class="btn btn-success btn-block loginbtn">Ajouter</button>
+
+                        </form>
+>>>>>>> 39bc15689e1e4fb4400e05e29668d5c20c9d9f9a
                                     </div>
                                     <div class="modal-footer">
                                         <a data-dismiss="modal" href="#">Cancel</a>
@@ -904,7 +931,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
