@@ -175,8 +175,8 @@
              </div>
         </div> 
                                     <div class="modal-footer">
-                                        <a data-dismiss="modal" href="#">Cancel</a>
-                                        <a href="#">Process</a>
+                                        <a data-dismiss="modal" href="#" id="close">Cancel</a>
+                                        <!-- <a href="#">Process</a> -->
                                     </div>
                                 </div>
                             </div>

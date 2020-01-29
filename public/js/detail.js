@@ -535,4 +535,8 @@ $(document).ready(function(){
 
         location.reload();
     })
+    $("#close").click(function() {
+
+        location.reload();
+    })
 })

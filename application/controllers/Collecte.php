@@ -14,7 +14,7 @@ class Collecte extends CI_Controller
         $this->load->library('session');
         
     }
-    //
+
     public function add()
     {
         $this->load->library('session');
@@ -31,14 +31,11 @@ class Collecte extends CI_Controller
         else{
             redirect('/');
         }
-
-       
-     
-    
     }
 
     public function BienNonBati()
     {
+        $data['zone'] = $this->bien->zone();
         $data['type'] = $this->bien->bienNonBati();
         $data['services'] = $this->bien->services();
         $this->load->view('accueil/header.php');
