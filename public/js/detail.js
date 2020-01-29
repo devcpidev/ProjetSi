@@ -94,9 +94,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append("<strong>Libelle: </strong>"+data.libelletype+" ");    
-                    $('#usage').append("<strong>Usage du bien: </strong>"+data.usagebienbatibienbati+" "); 
-                    $('#nature').append("<strong>Nature juridique : </strong>"+data.nature+" ");
+                    $('#libelletype').append(data.libelletype+" ");    
+                    $('#usage').append(data.usagebienbatibienbati+" "); 
+                    $('#nature').append(data.nature+" ");
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -177,9 +177,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append("<strong>Libelle: </strong>"+data.libelletype+" ");    
-                    $('#usage').append("<strong>Usage du bien: </strong>"+data.usagebienbati+" "); 
-                    $('#nature').append("<strong>Nature juridique : </strong>"+data.nature+" ");
+                    $('#libelletype').append(data.libelletype+" ");    
+                    $('#usage').append(data.usagebienbati+" "); 
+                    $('#nature').append(data.nature+" ");
                    
                    
                     if(data.typeimmeuble!=null){
@@ -235,9 +235,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append("<strong>Libelle: </strong>"+data.libelletype+" ");    
-                    $('#usage').append("<strong>Usage du bien: </strong>"+data.usagebienbati+" "); 
-                    $('#nature').append("<strong>Nature juridique : </strong>"+data.nature+" ");
+                    $('#libelletype').append(data.libelletype+" ");    
+                    $('#usage').append(data.usagebienbati+" "); 
+                    $('#nature').append(data.nature+" ");
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -258,20 +258,20 @@ $(document).ready(function(){
 
 
                    if(data.studiositue!=null){
-                    $('#studiositue').append("<strong>studio situé : </strong>"+data.studiositue+" ");
+                    $('#studiositue').append(data.studiositue+" ");
                    }
                    if(data.buanderie!=null){
-                    $('#buanderie').append("<strong>buanderie: </strong>"+data.buanderie+" ");
+                    $('#buanderie').append(data.buanderie+" ");
                    }
                    if(data.balcon!=null){
-                    $('#balcon').append("<strong>balcon: </strong>"+data.balcon+" ");
+                    $('#balcon').append(data.balcon+" ");
                    }
 
                    if(data.garage!=null){
-                    $('#garage').append("<strong>garage : </strong>"+data.garage+" ");
+                    $('#garage').append(data.garage+" ");
                    }
                    if(data.ascenseur!=null){
-                    $('#ascenseur').append("<strong>ascenseur: </strong>"+data.ascenseur+" ");
+                    $('#ascenseur').append(data.ascenseur+" ");
                    }
                    
                     if(data.broutep!=null){
@@ -312,9 +312,9 @@ $(document).ready(function(){
                    
                 }
                 if(data.idtypebien==5 ){
-                    $('#libelletype').append("<strong>Libelle: </strong>"+data.libelletype+" ");    
-                    $('#usage').append("<strong>Usage du bien: </strong>"+data.usagebienbati+" "); 
-                    $('#nature').append("<strong>Nature juridique : </strong>"+data.nature+" ");
+                    $('#libelletype').append(data.libelletype+" ");    
+                    $('#usage').append(data.usagebienbati+" "); 
+                    $('#nature').append(data.nature+" ");
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -335,20 +335,20 @@ $(document).ready(function(){
 
 
                    if(data.studiositue!=null){
-                    $('#studiositue').append("<strong>studio situé : </strong>"+data.studiositue+" ");
+                    $('#studiositue').append(data.studiositue+" ");
                    }
                    if(data.buanderie!=null){
-                    $('#buanderie').append("<strong>buanderie: </strong>"+data.buanderie+" ");
+                    $('#buanderie').append(data.buanderie+" ");
                    }
                    if(data.balcon!=null){
-                    $('#balcon').append("<strong>balcon: </strong>"+data.balcon+" ");
+                    $('#balcon').append(data.balcon+" ");
                    }
 
                    if(data.garage!=null){
-                    $('#garage').append("<strong>garage : </strong>"+data.garage+" ");
+                    $('#garage').append(data.garage+" ");
                    }
                    if(data.ascenseur!=null){
-                    $('#ascenseur').append("<strong>ascenseur: </strong>"+data.ascenseur+" ");
+                    $('#ascenseur').append(data.ascenseur+" ");
                    }
                    
                     if(data.broutep!=null){
@@ -391,9 +391,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append("<strong>Libelle: </strong>"+data.libelletype+" ");    
-                    $('#usage').append("<strong>Usage du bien: </strong>"+data.usagebienbati+" "); 
-                    $('#nature').append("<strong>Nature juridique : </strong>"+data.nature+" ");
+                    $('#libelletype').append(data.libelletype+" ");    
+                    $('#usage').append(data.usagebienbati+" "); 
+                    $('#nature').append(data.nature+" ");
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -460,9 +460,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append("<strong>Libelle: </strong>"+data.libelletype+" ");    
-                    $('#usage').append("<strong>Usage du bien: </strong>"+data.usagebienbati+" "); 
-                    $('#nature').append("<strong>Nature juridique : </strong>"+data.nature+" ");
+                    $('#libelletype').append(data.libelletype+" ");    
+                    $('#usage').append(data.usagebienbati+" "); 
+                    $('#nature').append(data.nature+" ");
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{

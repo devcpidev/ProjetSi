@@ -58,7 +58,6 @@
                                    
                             
                                
-                                <a class="Alert Alert-color" href="#" data-toggle="modal" data-target="#AlertModalhdbgcl">Ajouter </a>
                         
                                 </div>
                                 <table>
@@ -66,7 +65,7 @@
                                         <th>Identifiant</th>
                                         <th>Libellé</th>
                                         <th>Région</th>
-                                        <th>Action</th>
+                                       
                                     </tr>
                                     <?php
                                         if (isset($depts))
@@ -81,11 +80,7 @@
                                         <td><?php echo $pub->idDepartement ;?></td>
                                         <td><?php echo $pub->departement_name ;?></td>
                                         <td><?php echo $pub->libelle ;?></td>
-                                        <td>
-                                            <a href="#" data-toggle="tooltip" title="Edit" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="<?php echo base_url('index.php/organisation/deleteDepartement/'.$pub->idDepartement);?>" data-toggle="tooltip" title="Suprimer" class="btn btn-danger"><i class="fa fa-trash-o" onClick="return confirm('Voulez vous variment supprimer cet enregistrement ?')"></i></a>
-                                        </td>
-
+                                        
                                     </tr>
                                     <?php
                                         }
@@ -123,7 +118,8 @@
                             <div class="product-status-wrap">
                                 <h4>Liste des Départements de CPI</h4>
                                 <div class="add-product">
-                                    <a href="#" data-toggle="modal" data-target="#addDept">Ajouter</a>
+                                <a class="Alert Alert-color" href="#" data-toggle="modal" data-target="#AlertModalhdbgcl">Ajouter </a>
+
                                 </div>
                                 <table>
                                 <tr>
@@ -316,13 +312,12 @@
                             <div class="product-status-wrap">
                                 <h4>Liste des Régions</h4>
                                 <div class="add-product">
-                                    <a href="#" data-toggle="modal" data-target="#addRegion">Ajouter</a>
                                 </div>
                                 <table>
                                     <tr>
                                         <th>Identifiant</th>
                                         <th>Libellé</th>
-                                        <th>Action</th>
+                                       
                                     </tr>
                                     <?php
                                         if (isset($regions))
@@ -337,10 +332,7 @@
                                         <td><?php echo $pub->idRegion ;?></td>
                                         <td><?php echo $pub->libelle ;?></td>
 
-                                        <td>
-                                            <a href="#" data-toggle="tooltip" title="Edit" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="<?php echo base_url('index.php/organisation/deleteRegion/'.$pub->idRegion);?>" data-toggle="tooltip" title="Suprimer" class="btn btn-danger"><i class="fa fa-trash-o" onClick="return confirm('Voulez vous variment supprimer cet enregistrement ?')"></i></a>
-                                        </td>
+                                       
 
                                     </tr>
                                     <?php
@@ -893,21 +885,16 @@
                                     </div>
                                     <div class="modal-body">
                                         
-                                 <form action="#" id="loginForm">
-                            <div class="form-group">
+                                 <form method="Post" action="<?php echo base_url('index.php/organisation/saveDeptcpi') ?>">
+                                     <div class="form-group">
                                
-                                <input type="text" placeholder="libelle"  name="username"  class="form-control">
+                                    <input type="text" placeholder="libelle"  name="libelle"  class="form-control">
                                
-                            </div>
-                            <div class="form-group">
-                                
-                                <input type="text" placeholder="Region"  name="username"  class="form-control">
-                               
-                            </div>
+                                    </div>
                             
-                            <button class="btn btn-success btn-block loginbtn">Ajouter</button>
+                                    <input type="submit" class="btn btn-success btn-block loginbtn" value="Ajouter" />
                            
-                        </form>
+                                 </form>
                                     </div>
                                     <div class="modal-footer">
                                         <a data-dismiss="modal" href="#">Cancel</a>

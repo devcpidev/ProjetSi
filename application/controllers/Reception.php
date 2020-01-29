@@ -16,7 +16,7 @@ class Reception extends CI_Controller
     }
     //
   
-    public function liste()
+    public function listee()
     {
         $this->load->library('session');
 
@@ -31,6 +31,31 @@ class Reception extends CI_Controller
         else{
             redirect('/');
         }
+    }
+    public function liste($index=0)
+    {
+        $this->load->library('session');
+
+        if($this->session->userdata('user')){
+            $this->load->library('pagination');
+            $user = $this->session->userdata('idUser');
+            $config['base_url'] = site_url('/reception/liste/');
+            $config['fisrt_link'] ='fisrt';
+            $config['last_link'] = 'last';
+            $config['total_rows'] = count($this->bien->collectes());
+            $config['per_page'] = 8;
+            $this->pagination->initialize($config);
+            $data['collectes']=$this->bien->findlimit(8,$index);
+            $data['link']= $this->pagination->create_links();
+
+            $this->load->view('accueil/header.php');
+            $this->load->view('collecte/all_collecte',$data);
+            $this->load->view('accueil/footer.php');
+        }
+        else{
+            redirect('/');
+        }
+
     }
 
 
