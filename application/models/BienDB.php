@@ -102,7 +102,7 @@
             return $this->db->get('collecte',$limit,$row)->where('actif',0)->result();
         }
         public function collectes(){
-            return $this->db->select('*')
+            return $this->db->select('distinct *')
             ->from('collecte')
             ->where('actif',0)
             ->get()

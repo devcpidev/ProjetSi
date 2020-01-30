@@ -36,23 +36,27 @@
                                     <div class="product-delivary">
                                         <div class="input-group mg-b-15">
                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                <input required type="text" class="form-control" name="nom" placeholder="Nom du Proprétaire">
+                                            <input type="text" class="form-control" name="cnipropi" id="cnipropi" placeholder="CNI du propriétaire">
+                                        </div>
+                                        <div class="input-group mg-b-15">
+                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                <input required type="text" class="form-control" id="nom" name="nom" placeholder="Nom du Proprétaire">
                                         </div>
                                         <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="prenom" placeholder="prenom du proprietaire">
+                                                            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom du proprietaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="tel" placeholder="téléphone du proprietaire">
+                                                            <input type="text" class="form-control" id="tel" name="tel" placeholder="téléphone du proprietaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="email" placeholder="email du proprietaire">
+                                                            <input type="text" class="form-control" id="email" name="email" placeholder="email du proprietaire">
                                                     </div>
                                                     <div class="input-group mg-b-15">
                                                             <span class="input-group-addon"><i class="fa fa-position" aria-hidden="true"></i></span>
-                                                            <input type="text" class="form-control" name="adressesen" placeholder="adresse au senegal">
+                                                            <input type="text" class="form-control" id="adressesen" name="adressesen" placeholder="adresse au senegal">
                                                     </div>
                                                     
                                                     
@@ -66,6 +70,8 @@
 
                                                             <label class='form-check-label' > <input class='form-control' type='checkbox' id="info" value="1">à t-il un représentant</label>
                                                     </div>
+
+                                                
                                             
                                                     <div id="nomrep">
                                                           
@@ -278,4 +284,6 @@
             </div>
         </div>
 
+
         <script src="<?php echo base_url();?>public/js/collecte.js"></script>
+        <script src="<?php echo base_url();?>public/js/proprietaire.js"></script>
