@@ -97,6 +97,15 @@
             $query = $this->db->query("SELECT  * FROM collecte c WHERE c.numdossier='$dossier' ");
             return $query->row();
         }
+        public function getElemByNumdossiers($iduser)
+        {
+            return $this->db->select('*')
+            ->from('collecte')
+            ->where('numdossier',$iduser)
+            ->get()
+            ->result();
+        }
+
         public function findlimitcollecte($limit,$row){
 
             return $this->db->get('collecte',$limit,$row)->where('actif',0)->result();

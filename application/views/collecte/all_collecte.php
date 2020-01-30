@@ -40,7 +40,7 @@
                                                     }
                                                     if($i->libellec=="A Renover")
                                                     {
-                                                        echo '<button class="ps-setting">Paused</button>
+                                                        echo '<button class="ps-setting">A Renover</button>
                                                         ';
 
                                                     }
@@ -86,6 +86,11 @@
                                             <?php } ?>
                                            
                                         <td><button class="btn btn-info" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button></td>
+                                        <td>
+                                        <a href="<?php echo base_url();?>index.php/Reception/pdf/<?php echo  $i->numdossier; ?>">
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#modal_update"  > <i class="fa fa-file fa-lg"></i></button>
+                                        </a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </table>

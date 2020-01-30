@@ -32,13 +32,13 @@
 
                                                     if($i->libellec=="A Vendre")
                                                     {
-                                                        echo ' <button class="pd-setting">A Vendre</button>
+                                                        echo '<button class="pd-setting">A Vendre</button>
                                                         ';
 
                                                     }
                                                     if($i->libellec=="A Renover")
                                                     {
-                                                        echo '<button class="ps-setting">Paused</button>
+                                                        echo '<button class="ps-setting">A Renover</button>
                                                         ';
 
                                                     }
