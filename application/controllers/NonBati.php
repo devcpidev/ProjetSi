@@ -10,7 +10,49 @@ class NonBati extends CI_Controller
 		$this->load->library('session');
 
 	}
+	public function listee()
+	{
+		$this->load->library('session');
+
+		//restrict users to go to home if not logged in
+		if($this->session->userdata('user')){
+			$user = $this->session->userdata('idUser');
+			$data['infos'] = $this->bien->mesCollectesnonbati($user);
+			//$data['collectes'] = $this->bien->collectes();
+			$this->load->view('accueil/header.php');
+			$this->load->view('collecte/listebienNonBati',$data);
+			$this->load->view('accueil/footer.php');
+		}
+		else{
+			redirect('/');
+		}
+	}
 	//
+	public function liste($index=0)
+	{
+		$this->load->library('session');
+
+		if($this->session->userdata('user')){
+			$this->load->library('pagination');
+			$user = $this->session->userdata('idUser');
+			$config['base_url'] = site_url('/NonBati/liste/');
+			$config['fisrt_link'] ='fisrt';
+			$config['last_link'] = 'last';
+			$config['total_rows'] = count($this->bien->mesCollectesnonbati($user));
+			$config['per_page'] = 8;
+			$this->pagination->initialize($config);
+			$data['infos']=$this->bien->findlimit2(8,$index);
+			$data['link']= $this->pagination->create_links();
+
+			$this->load->view('accueil/header.php');
+			$this->load->view('collecte/listebienNonBati',$data);
+			$this->load->view('accueil/footer.php');
+		}
+		else{
+			redirect('/');
+		}
+
+	}
 
 	public function BienNonBati()
 	{
@@ -525,31 +567,6 @@ class NonBati extends CI_Controller
 				'titreprop' => $titreprop,
 				'autresdoc' => $autresdoc,
 				'surface' => $surface,
-				'planelec' => $planelec,
-
-				'cahierdesctechnique' => $cahierdesctechnique,
-				'fichinsctechnique' => $fichinsctechnique,
-				'etudefinancement' => $etudefinancement,
-				'demandeautmaire' => $demandeautmaire,
-				'moyenspreuv' => $moyenspreuv,
-				'autdemolir' => $autdemolir,
-				'plansituation' => $plansituation,
-				'jeuxcons' => $jeuxcons,
-				'ficherenseign' => $ficherenseign,
-				'devisestim' => $devisestim,
-				'taxesmunicip' => $taxesmunicip,
-				'taxesurbanism' => $taxesurbanism,
-				'timbrefisc' => $timbrefisc,
-				'enveloppe' => $enveloppe,
-				'demandeminurb' => $demandeminurb,
-				'cahiercharge' => $cahiercharge,
-				'rapportpres' => $rapportpres,
-				'planmorcel' => $planmorcel,
-				'cdnum' => $cdnum,
-				'cditem' => $cditem,
-				'timbrefisc' => $timbrefisc,
-				'timbrevar' => $timbrevar,
-
 				'broutep' => $broutep,
 				'broute' => $broute,
 				'angle' => $angle,
@@ -589,46 +606,12 @@ class NonBati extends CI_Controller
 				'nature' => $nature,
 
 				'typebiennonbati' => $typebiennonbati,
-				'etatdroitreel' => $etatdroitreel,
-				'actedevente' => $actedevente,
-				'autorisationcons' => $autorisationcons,
-				'planbetonarme' => $planbetonarme,
-				'planarchi' => $planarchi,
-				'planindividuelap' => $planindividuelap,
-				'autorisationbail' => $autorisationbail,
-				'deliberationind' => $deliberationind,
-				'attestbail' => $attestbail,
-				'procceder' => $procceder,
-				'zone' => $zone,
-				'services' => $services,
+
+				'typeservices' => $services,
 				'proprietaire' => $prop,
 				'titreprop' => $titreprop,
-				'cnibailleur' => $cnibailleur,
-				'autresdoc' => $autresdoc,
-				'planelec' => $planelec,
-
-				'cahierdesctechnique' => $cahierdesctechnique,
-				'fichinsctechnique' => $fichinsctechnique,
-				'etudefinancement' => $etudefinancement,
-				'demandeautmaire' => $demandeautmaire,
-				'moyenspreuv' => $moyenspreuv,
-				'autdemolir' => $autdemolir,
-				'plansituation' => $plansituation,
 				'jeuxcons' => $jeuxcons,
-				'ficherenseign' => $ficherenseign,
-				'devisestim' => $devisestim,
-				'taxesmunicip' => $taxesmunicip,
-				'taxesurbanism' => $taxesurbanism,
-				'timbrefisc' => $timbrefisc,
-				'enveloppe' => $enveloppe,
-				'demandeminurb' => $demandeminurb,
-				'cahiercharge' => $cahiercharge,
-				'rapportpres' => $rapportpres,
-				'planmorcel' => $planmorcel,
-				'cdnum' => $cdnum,
-				'cditem' => $cditem,
-				'timbrefisc' => $timbrefisc,
-				'timbrevar' => $timbrevar,
+
 
 				'broutep' => $broutep,
 				'broute' => $broute,
@@ -669,47 +652,11 @@ class NonBati extends CI_Controller
 				'nature' => $nature,
 
 				'typebiennonbati' => $typebiennonbati,
-				'etatdroitreel' => $etatdroitreel,
-				'actedevente' => $actedevente,
-				'autorisationcons' => $autorisationcons,
-				'planbetonarme' => $planbetonarme,
-				'planarchi' => $planarchi,
-				'planindividuelap' => $planindividuelap,
-				'autorisationbail' => $autorisationbail,
-				'deliberationind' => $deliberationind,
-				'attestbail' => $attestbail,
-				'procceder' => $procceder,
-				'zone' => $zone,
-				'services' => $services,
+
+				'typeservices' => $services,
 				'proprietaire' => $prop,
 				'titreprop' => $titreprop,
-				'cnibailleur' => $cnibailleur,
-				'autresdoc' => $autresdoc,
-				'planelec' => $planelec,
-
-				'cahierdesctechnique' => $cahierdesctechnique,
-				'fichinsctechnique' => $fichinsctechnique,
-				'etudefinancement' => $etudefinancement,
-				'demandeautmaire' => $demandeautmaire,
-				'moyenspreuv' => $moyenspreuv,
-				'autdemolir' => $autdemolir,
-				'plansituation' => $plansituation,
 				'jeuxcons' => $jeuxcons,
-				'ficherenseign' => $ficherenseign,
-				'devisestim' => $devisestim,
-				'taxesmunicip' => $taxesmunicip,
-				'taxesurbanism' => $taxesurbanism,
-				'timbrefisc' => $timbrefisc,
-				'enveloppe' => $enveloppe,
-				'demandeminurb' => $demandeminurb,
-				'cahiercharge' => $cahiercharge,
-				'rapportpres' => $rapportpres,
-				'planmorcel' => $planmorcel,
-				'cdnum' => $cdnum,
-				'cditem' => $cditem,
-				'timbrefisc' => $timbrefisc,
-				'timbrevar' => $timbrevar,
-
 				'broutep' => $broutep,
 				'broute' => $broute,
 				'angle' => $angle,

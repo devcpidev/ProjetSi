@@ -16,6 +16,10 @@
 
             return $this->db->get('collecte',$limit,$row)->result();
         }
+		public function findlimit2($limit,$row){
+
+			return $this->db->get('collectenonbati',$limit,$row)->result();
+		}
     
         public function bienNonBati()
         {
@@ -87,6 +91,14 @@
             ->get()
             ->result();
         }
+		public function mesCollectesnonbati($iduser)
+		{
+			return $this->db->select('*')
+				->from('collectenonbati')
+				->where('utilisateur',$iduser)
+				->get()
+				->result();
+		}
 
         public function getDocs($dossier){
             $query = $this->db->query("SELECT  document1,document2 FROM collecte c WHERE c.numdossier='$dossier' ");
@@ -101,6 +113,10 @@
 
             return $this->db->get('collecte',$limit,$row)->where('actif',0)->result();
         }
+		public function findlimitcollecte2($limit,$row){
+
+			return $this->db->get('collectenonbati',$limit,$row)->where('actif',0)->result();
+		}
         public function collectes(){
             return $this->db->select('*')
             ->from('collecte')

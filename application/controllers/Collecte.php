@@ -31,22 +31,21 @@ class Collecte extends CI_Controller
         else{
             redirect('/');
         }
-<<<<<<< HEAD
 
 
 
 
-=======
->>>>>>> 4e473d3e03ddaa52942814ebfe202eb8705407ee
+
+
     }
 
     public function BienNonBati()
     {
-<<<<<<< HEAD
+
 		$data['zone'] = $this->bien->zone();
-=======
-        $data['zone'] = $this->bien->zone();
->>>>>>> 4e473d3e03ddaa52942814ebfe202eb8705407ee
+
+
+
         $data['type'] = $this->bien->bienNonBati();
         $data['services'] = $this->bien->services();
         $this->load->view('accueil/header.php');

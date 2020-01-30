@@ -164,6 +164,7 @@ $id = $this->session->userdata('id');
                                 <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/add"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bien Bati</span></a></li>
                                 <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/BienNonBati"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bien Non Bati</span></a></li>
                                 <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste</span></a></li>
+                                <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Non Bati</span></a></li>
 
                             </ul>
                         </li>
