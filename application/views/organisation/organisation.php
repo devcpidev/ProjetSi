@@ -55,18 +55,10 @@
                             <div class="product-status-wrap">
                                 <h4>Liste des Départements</h4>
                                 <div class="add-product">
-<<<<<<< HEAD
                                    
                             
                                
                         
-=======
-
-
-
-                                <a class="Alert Alert-color" href="#" data-toggle="modal" data-target="#AlertModalhdbgcl">Ajouter </a>
-
->>>>>>> 39bc15689e1e4fb4400e05e29668d5c20c9d9f9a
                                 </div>
                                 <table>
                                     <tr>
@@ -599,7 +591,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="addRegion" role="dialog"  >
+   <!-- <div class="modal fade" id="addRegion" role="dialog"  >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -628,15 +620,29 @@
         </div>
       </div>
     </div>
+-->
+    
+    <div class="login-form-area adminpro-pd mg-tb-15">
+            <div class="container-fluid">
 
-    <div class="modal fade" id="addTypeProduit" role="dialog"  >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p><h4>Enregistrement Type produit</h4></p>
-          </div>
-            <div class="modal-body">
-              <form method="POST" action="<?php echo base_url('index.php/organisation/saveTypeProduit') ?>">
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+
+                        <div id="addTypeProduit" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-3">
+                                    <p><h4>Enregistrement Type produit</h4></p>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    <form method="POST" action="<?php echo base_url('index.php/organisation/saveTypeProduit') ?>">
                 <div class="input-group mg-b-15 mg-t-15">
                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" name="libelle" placeholder="Libelle">
@@ -652,21 +658,40 @@
                     </div>
                     </div>
               </form>
-            </div>
-            <div class="modal-footer">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Process</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-      </div>
-    </div>
+    <div class="login-form-area adminpro-pd mg-tb-15">
+            <div class="container-fluid">
 
-    <div class="modal fade" id="addTypeZone" role="dialog"  >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p><h4>Enregistrement Type zone</h4></p>
-          </div>
-            <div class="modal-body">
-                <form method="POST" action="<?php echo base_url('index.php/organisation/saveTypeZone') ?>">
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+
+                        <div id="addTypeZone" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-3">
+                                    <p><h4>Enregistrement Type zone</h4></p>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    <form method="POST" action="<?php echo base_url('index.php/organisation/saveTypeZone') ?>">
                     <div class="input-group mg-b-15 mg-t-15">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="libelle" placeholder="Libelle">
@@ -682,14 +707,21 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Process</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-      </div>
-    </div>
 
-    <div class="modal fade" id="addDepartement" role="dialog"  >
+   <!-- <div class="modal fade" id="addDepartement" role="dialog"  >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -731,15 +763,31 @@
         </div>
       </div>
     </div>
+    -->
 
-    <div class="modal fade" id="addService" role="dialog"  >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p><h4>Enregistrement Service</h4></p>
-          </div>
-            <div class="modal-body">
-                <form method="POST" action="<?php echo base_url('index.php/organisation/saveService') ?>">
+    
+    <!-- Modals Start-->
+<div class="login-form-area adminpro-pd mg-tb-15">
+            <div class="container-fluid">
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+
+                        <div id="addService" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-3">
+                                    <p><h4>Enregistrement Bureau</h4></p>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    <form method="POST" action="<?php echo base_url('index.php/organisation/saveService') ?>">
                     <div class="input-group mg-b-15 mg-t-15">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="libelle" placeholder="Libelle">
@@ -768,21 +816,42 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Process</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-      </div>
-    </div>
 
-    <div class="modal fade" id="addBureau" role="dialog"  >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p><h4>Enregistrement Bureau</h4></p>
-          </div>
-            <div class="modal-body">
-                <form method="POST" action="<?php echo base_url('index.php/organisation/saveBureau') ?>">
+<!-- Modals Start-->
+<div class="login-form-area adminpro-pd mg-tb-15">
+            <div class="container-fluid">
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+
+                        <div id="addBureau" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-3">
+                                    <p><h4>Enregistrement Bureau</h4></p>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    <form method="POST" action="<?php echo base_url('index.php/organisation/saveBureau') ?>">
                     <div class="input-group mg-b-15 mg-t-15">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="libelle" placeholder="Libelle">
@@ -811,21 +880,43 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Process</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-      </div>
-    </div>
 
-    <div class="modal fade" id="addZone" role="dialog"  >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p><h4>Enregistrement Zone</h4></p>
-          </div>
-            <div class="modal-body">
-                <form method="POST" action="<?php echo base_url('index.php/organisation/saveZone') ?>">
+    
+<!-- Modals Start-->
+<div class="login-form-area adminpro-pd mg-tb-15">
+            <div class="container-fluid">
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+
+                        <div id="addZone" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-3">
+                                        <h4 class="modal-title" >Enregistrement Zone</h4>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    <form method="POST" action="<?php echo base_url('index.php/organisation/saveZone') ?>">
                     <div class="input-group mg-b-15 mg-t-15">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         <input type="text" class="form-control" name="libelle" placeholder="Libelle">
@@ -866,12 +957,21 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Process</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-      </div>
-    </div>
+
+    
 <!-- Modals Start-->
 <div class="login-form-area adminpro-pd mg-tb-15">
             <div class="container-fluid">
@@ -892,7 +992,6 @@
                                         </div>
                                     </div>
                                     <div class="modal-body">
-<<<<<<< HEAD
                                         
                                  <form method="Post" action="<?php echo base_url('index.php/organisation/saveDeptcpi') ?>">
                                      <div class="form-group">
@@ -904,24 +1003,6 @@
                                     <input type="submit" class="btn btn-success btn-block loginbtn" value="Ajouter" />
                            
                                  </form>
-=======
-
-                                 <form action="#" id="loginForm">
-                            <div class="form-group">
-
-                                <input type="text" placeholder="libelle"  name="username"  class="form-control">
-
-                            </div>
-                            <div class="form-group">
-
-                                <input type="text" placeholder="Region"  name="username"  class="form-control">
-
-                            </div>
-
-                            <button class="btn btn-success btn-block loginbtn">Ajouter</button>
-
-                        </form>
->>>>>>> 39bc15689e1e4fb4400e05e29668d5c20c9d9f9a
                                     </div>
                                     <div class="modal-footer">
                                         <a data-dismiss="modal" href="#">Cancel</a>

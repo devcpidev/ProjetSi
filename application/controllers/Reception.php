@@ -105,6 +105,33 @@ class Reception extends CI_Controller
            redirect('reception/liste');
        }
     }
+    public function pdf($numdossier){
+        ob_start();
+        $data['liste_dossiers'] = $this->bien->getElemByNumdossiers($numdossier);
+        $this->load->view("collecte/pdf",$data);
+        require_once 'html2pdf/vendor/autoload.php';
+        require_once 'html2pdf/src/Html2Pdf.php';
+      
+        try {
 
+
+            $content = ob_get_clean();
+
+            $html2pdf = new \Spipu\Html2Pdf\Html2Pdf('P', 'A4', 'fr','true');
+            $html2pdf->pdf->SetDisplayMode('fullpage');
+            $html2pdf->writeHTML($content);
+            $html2pdf->output('fiche.pdf');
+        } catch (Html2PdfException $e) {
+            $html2pdf->clean();
+
+            $formatter = new ExceptionFormatter($e);
+            echo $formatter->getHtmlMessage();
+        }
+
+
+        return  $this->load->view("collecte/pdf");
+
+
+    }
     
 }
