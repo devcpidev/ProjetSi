@@ -215,6 +215,7 @@ class Collecte extends CI_Controller
             $date = date("Y-d");
             $numdossier = "zu"."".$date."".$max;
         }
+        //test
         
         if($user=3){
             $max =  $this->bien->getMaxidP();
