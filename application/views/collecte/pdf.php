@@ -10,7 +10,10 @@
     {
         margin-bottom: 5%;
     }
-   
+    td {
+  display: table-cell;
+  vertical-align: inherit;
+}
 </style>
 
 <body>
@@ -30,35 +33,121 @@
                                 <?php foreach($liste_dossiers as $i)
                                 { ?>
                                         <tr>
-                                        <td>Numero du dossier : </td> 
+                                        <td><b>Numero du dossier : </b> </td> 
                                         <td> <?php echo  $i->numdossier; ?></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                        <td>Date Collecte : </td>
-                                        <td><?php echo  $i->datecollecte; ?></td>
-                                        </tr>
-                                        <tr>
-                                        <td>Adresse précise du bien : </td> 
-                                        <td> <?php echo  $i->adresse; ?></td>
-                                        </tr>
-                                        <tr>
-                                        <td>Nature juridique du bien : : </td>
-                                        <td><?php echo $i->nature; ?></td>
-                                        </tr>
-                                        <tr>
-                                        <td>Type du bien : </td> 
-                                        <td> <?php echo  $i->libelletype; ?></td>
-                                        </tr>
-                                        <tr>
-                                        <td>Collaboration avec cpi : </td>
-                                        <td><?php echo $i->libellec; ?></td>
-                                        </tr>
-                                        <tr>
-                                        <td>Nom du propriétaire :</td>
-                                        <td><?php echo  $i->nom; ?> <?php echo  $i->prenom; ?></td>
+                                        <td> </td>
+                                        <td><b>Nom du propriétaire :  </b></td>
+                                        <td><?php echo  $i->nom; ?> <?php echo  $i->prenom; ?> </td>
                                         </tr>
                                        
+                                       
+                                       
+                                       
+                                        <tr>
+                                        <td> <b>Date Collecte : </b></td>
+                                        <td><?php echo  $i->datecollecte; ?></td>
+                                        <td> </td>
+                                        <td><b>Tel :   </b></td>
+                                        <td> <?php echo  $i->tel; ?></td>
+                                        </tr>
+                                        <tr>
+                                        <td> </td> 
+                                        <td> </td>
+                                        <td> </td>
+                                        <td><b>Email :   </b></td>
+                                        <td> <?php echo  $i->email; ?></td>
+                                        </tr>
+                                        <tr>
+                                        <td> </td> 
+                                        <td> </td>
+                                        <td> <pre>                  </pre></td>
+                                        <td><b>Adresse:   </b></td>
+                                        <td> <?php echo  $i->adressesen; ?></td>
+                                        </tr>
+                                        
+                                        <?php
+                                     } ?>
+   </table>
+
+   <pre>                                 </pre>
+   <table>
+                                <?php foreach($liste_dossiers as $i)
+                                { ?>
+                                        <tr>
+                                        <td> </td> 
+                                        <td> </td>
+                                        <td> </td>
+                                        <td><b>Nom Representant:  </b></td>
+                                        <td><?php echo  $i->nomrep; ?>  </td>
+                                        </tr>
+                                       
+                                       
+                                       
+                                       
+                                        <tr>
+                                        <td> </td>
+                                        <td></td>
+                                        <td> </td>
+                                        <td><b>Tel Representant :   </b></td>
+                                        <td> <?php echo  $i->telrep; ?></td>
+                                        </tr>
+                                        <tr>
+                                        <td> </td> 
+                                        <td> </td>
+                                        <td> </td>
+                                        <td><b>Email Representant :   </b></td>
+                                        <td> <?php echo  $i->emailrep; ?></td>
+                                        </tr>
+                                        <tr>
+                                        <td> </td> 
+                                        <td> </td>
+                                        <td> <pre>                                                  </pre></td>
+                                        <td><b>Adresse Representant:   </b></td>
+                                        <td> <?php echo  $i->adresserep; ?></td>
+                                        </tr>
+                                        
+                                        <?php
+                                     } ?>
+   </table>
+   <pre>         </pre>
+   <table border="1" width="100%">
+                                <?php foreach($liste_dossiers as $i)
+                                { ?>
+                                        <tr>
+                                        <td><b>Adresse Produit : </b> </td> 
+                                        <td><?php echo  $i->adresse; ?>  </td>
+                                       
+                                        <td><b>Usage:  </b></td>
+                                        <td><?php echo  $i->usagebienbati; ?>  </td>
+                                        </tr>
+                                       
+                                       
+                                       
+                                       
+                                        <tr>
+                                        <td><b>Nature Produit : </b></td> 
+                                        <td><?php echo  $i->nature; ?>  </td>
+                                        
+                                        <td><b>Nombre de Pieces:   </b></td>
+                                        <td> <?php echo  $i->nbpieces; ?></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td> <b>Surface Produit: </b> </td> 
+                                        <td><?php echo  $i->surface; ?>  </td>
+                                        
+                                        <td><b>Nombre Toillete :   </b></td>
+                                        <td> <?php echo  $i->nbtoilettes; ?></td>
+                                        </tr>
+                                        <tr>
+
+                                        <td><b>Nombre Cuisine :   </b> </td> 
+                                        <td><?php echo  $i->typecuisine; ?>  </td>
+                                        
+                                        <td><b>Jardin:   </b></td>
+                                        <td> <?php echo  $i->jardin; ?></td>
+                                        </tr>
+                                        
                                         <?php
                                      } ?>
    </table>
