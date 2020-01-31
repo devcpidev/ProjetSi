@@ -32,28 +32,21 @@ class Collecte extends CI_Controller
         else{
             redirect('/');
         }
-<<<<<<< HEAD
 
 
 
 
 
 
-=======
->>>>>>> b3fb64644e19b2ec0a734c18292795dd466edab3
     }
 
     public function BienNonBati()
     {
-<<<<<<< HEAD
 
 		$data['zone'] = $this->bien->zone();
 
 
 
-=======
-        $data['zone'] = $this->bien->zone();
->>>>>>> b3fb64644e19b2ec0a734c18292795dd466edab3
         $data['type'] = $this->bien->bienNonBati();
         $data['services'] = $this->bien->services();
         $this->load->view('accueil/header.php');
@@ -1393,6 +1386,6 @@ class Collecte extends CI_Controller
     
 
 
-  // bien non bati
+  // bien non batis
 
 }
