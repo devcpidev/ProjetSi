@@ -1381,6 +1381,13 @@ class Collecte extends CI_Controller
            echo json_encode($data);
         }
     }
+    public function prop(){
+        if (isset($_GET['numdossier'])) {
+           $numdossier = $_GET['numdossier'];
+           $data = $this->prop->getproprio($numdossier);
+           echo json_encode($data);
+        }
+    }
 
    
     

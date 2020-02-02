@@ -60,7 +60,7 @@
                                         <div class="modal-area-button">
                               
                                             <button class="btn btn-primary  Alert Alert-color detail" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#AlertModalhdbgcl">Voir plus</button>
-
+                                            <button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button>
                                         </div>
 
                                         </td>
@@ -239,5 +239,36 @@
     </div>
   </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="propModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informations du Propriétaire</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <p id="nom"></p>
+            <p id="prenom"></p>
+            <p id="adressesen"></p>
+            <p id="tel"></p>
+            <p id="email"></p>
+            <p id="nomrep"></p>
+            <p id="telrep"></p>
+            <p id="adresserep"></p>
+            <p id="emailrep"></p>
+            <p id="tel"></p>
+           
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                           
   <script src="<?php echo base_url();?>public/js/detail.js"></script>
+  <script src="<?php echo base_url();?>public/js/proprietaire.js"></script>
