@@ -14,12 +14,11 @@ $(document).ready(function(){
             success : function(data){
                 console.log(data)
                 if(data.idtypebien==1 ){
-                    console.log("ddd"+data.angle)
-                    console.log("ddd"+data.broute)
-                    console.log("ddd"+data.broutep)
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(+data.usagebienbati+" "); 
-                    $('#nature').append(""+data.nature+" ");
+                   
+                    console.log("ddd"+data.nature)
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -91,12 +90,9 @@ $(document).ready(function(){
                    
                 }
                 if(data.idtypebien==2){
-                    console.log("ddd"+data.angle)
-                    console.log("ddd"+data.broute)
-                    console.log("ddd"+data.broutep)
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(data.usagebienbatibienbati+" "); 
-                    $('#nature').append(data.nature+" ");
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -174,13 +170,48 @@ $(document).ready(function(){
                    
                 }
                 if(data.idtypebien==3 ){
-                    console.log("ddd"+data.angle)
-                    console.log("ddd"+data.broute)
-                    console.log("ddd"+data.broutep)
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(data.usagebienbati+" "); 
-                    $('#nature').append(data.nature+" ");
-                   
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
+                    if(data.nbpieces!=null){
+                        $('#nbpieces').append(data.nbpieces);  
+                    }else{
+                        $('#nbpieces').append(""+0);
+                    }  
+                    if(data.nbsalledebain!=null){
+                        $('#nbsalledebain').append(data.nbsalledebain);  
+                    }else{
+                        $('#nbsalledebain').append(""+0); 
+                    }
+                    if(data.nbtoilettes!=null){
+                    
+                        $('#nbtoilettes').append(data.nbtoilettes);  
+                    }else{
+                        $('#nbtoilettes').append(""+0); 
+                    }
+
+                    if(data.jardin!=null){
+                        $('#jardin').append(data.jardin);  
+                    }else{
+                        $('#jardin').append("sans jardin"); 
+                    }
+
+                    if(data.typecuisine!=null){
+                        $('#cuisine').append("<strong>Type de cuisine : </strong>"+data.typecuisine+" ");  
+                    }else{
+                        $('#cuisine').append(""); 
+                    }
+
+                    if(data.piscine!=null){
+                        $('#piscine').append("<strong>Piscine  : </strong>"+data.piscine+" ");  
+                    }else{
+                        $('#piscine').append(""); 
+                    }
+                    if(data.nbgarage!=null){
+                        $('#garage').append("<strong>Nombre de garages: </strong>"+data.nbgarage+""); 
+                    }else{
+                        $('#garage').append(""+0); 
+                    }
                    
                     if(data.typeimmeuble!=null){
                         $('#typeimmeuble').html("<strong>"+data.typeimmeuble+"</strong>")
@@ -222,22 +253,15 @@ $(document).ready(function(){
                         $("#document2").append("<div><a href=http://localhost/ProjetSi/index.php/Collecte/download2?numdossier="+data.numdossier+"><h4><strong>cliquez pour telecharger le second document</strong></h4></a></div>");
                     }
 
-                    if(data.document1!=null){
-                        $("#document1").append("<div><a href=http://localhost/ProjetSi/index.php/Collecte/download1?numdossier="+data.numdossier+"><h4><strong>cliquez pour telecharger le premier document</strong></h4></a></div>");
-                    }
-
-                    if(data.document2!=null){
-                        $("#document2").append("<div><a href=http://localhost/ProjetSi/index.php/Collecte/download2?numdossier="+data.numdossier+"><h4><strong>cliquez pour telecharger le second document</strong></h4></a></div>");
-                    }
                    
                 }
                 if(data.idtypebien==4 ){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(data.usagebienbati+" "); 
-                    $('#nature').append(data.nature+" ");
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -312,9 +336,9 @@ $(document).ready(function(){
                    
                 }
                 if(data.idtypebien==5 ){
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(data.usagebienbati+" "); 
-                    $('#nature').append(data.nature+" ");
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -391,9 +415,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(data.usagebienbati+" "); 
-                    $('#nature').append(data.nature+" ");
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
@@ -460,9 +484,9 @@ $(document).ready(function(){
                     console.log("ddd"+data.angle)
                     console.log("ddd"+data.broute)
                     console.log("ddd"+data.broutep)
-                    $('#libelletype').append(data.libelletype+" ");    
-                    $('#usage').append(data.usagebienbati+" "); 
-                    $('#nature').append(data.nature+" ");
+                    $('#libelletype').append(data.libelletype);    
+                    $('#usage').append(data.usagebienbati); 
+                    $('#nature').append(data.nature);
                     if(data.nbpieces!=null){
                         $('#nbpieces').append(data.nbpieces);  
                     }else{
