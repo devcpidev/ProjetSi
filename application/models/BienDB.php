@@ -130,6 +130,7 @@
             return $this->db->select('*')
             ->from('collecte')
             ->where('actif',0)
+            ->order_by("idproduit","asc")
             ->get()
             ->result();
         }
