@@ -76,7 +76,7 @@
                                             <?php } ?>
                                             <?php  if($i->etat==0 ){ ?>
                                                                                      
-                                                 <td><a href="<?php echo base_url();?>index.php/Reception/valider?idproduit=<?php echo $i->idproduit?>" class="btn btn-warning" >  Valider</a></td>
+                                                 <td><a href="<?php echo base_url();?>index.php/Reception/valider?idproduit=<?php echo $i->idproduit?>&numdossier=<?php echo $i->numdossier?>" class="btn btn-warning" >  Valider</a></td>
                                                                                 
                                             <?php } ?>
                                             <?php  if($i->etat>0 ){ ?>
