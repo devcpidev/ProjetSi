@@ -71,6 +71,7 @@
             return $this->db->insert_id();
         }
 
+
         public function getMaxidP(){
             $resultat = $this->db->query("SELECT Max(idproduit) AS max FROM produit");
             return $resultat->row()->max;

@@ -227,7 +227,7 @@ class NonBati extends CI_Controller
 
 		}
 		// echo "yes".$this->session->userdata('idUser');
-		echo "gg".$typebiennonbati;
+		//echo "gg".$typebiennonbati;
 		if (($typebiennonbati == 1 && $services == 1) || ($typebiennonbati == 2 && $services == 1) || ($typebiennonbati == 3 && $services == 1) || ($typebiennonbati == 4 && $services == 1) || ($typebiennonbati == 5 && $services == 1)) {
 
 			// echo "yes".$numdossier;
@@ -269,7 +269,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 
@@ -316,7 +316,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 
@@ -358,7 +358,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 
@@ -403,7 +403,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 
@@ -450,7 +450,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 
 				}
 			}
@@ -499,7 +499,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 		}
@@ -591,7 +591,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 		}
@@ -637,7 +637,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 		}
@@ -681,7 +681,7 @@ class NonBati extends CI_Controller
 					);
 					$this->bien->insertDetails($details);
 					$this->uploadFile();
-					redirect('collecte/listebienNonBati');
+					redirect('NonBati/liste');
 				}
 			}
 

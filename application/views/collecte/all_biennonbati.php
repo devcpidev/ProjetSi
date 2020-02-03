@@ -123,44 +123,11 @@
 								<td> <i><b>nature juridique : </b></i></td><td > <p id="nature"></p></td>
 
 							</tr>
+
 							<tr>
-								<td> <i><b>Usage de Bien:</b></i> </td><td > <p id="usage"></p></td>
+								<td> <i><b>Libelle: </b></i></td><td >   <p id="libellebiennonbati"></p></td>
 							</tr>
-							<tr>
-								<td> <i><b>Type Immeuble:</b></i> </td><td > <p id="typeimmeuble"></p></td>
-							</tr>
-							<tr>
-								<td> <i><b>Libelle: </b></i></td><td >   <p id="libelletype"></p></td>
-							</tr>
-							<tr>
-								<td> <i><b>Nombre de pieces :</b></i> </td><td >   <p id="nbpieces"></p></td>
-							</tr>
-							<tr>
-								<td> <i><b>Nombre de salle de bains :</b></i> </td><td >   <p id="nbsalledebain"></p></td>
-							</tr>
-							<tr>
-								<td> <i><b>Jardin : </b></i></td><td >    <p id="jardin"></p></td>
-							</tr>
-							<tr>
-								<td> <i><b>Nombre de Garage :</b></i> </td><td >    <p id="garage"></p></td>
-							</tr>
-							<tr>
-								<!-- <td> Nombre de Cuisine: </td><td >      <p id="cuisine"></p></td>
-								</tr>
-								<tr>
-								<td> Nombre de piscine: </td><td >    <p id="piscine"></p></td>
-								</tr>
-								<td> Buanderie : </td><td >     <p id="buanderie"></p></td>
-								</tr>
-								<tr>
-								<td> Nombre de Balcon : </td><td >      <p id="balcon"></p></td>
-								</tr>
-								<tr>
-								<td> Nombre de Garage : </td><td >      <p id="garage"></p></td>
-								</tr>
-								<tr>
-								<td> Ascenceur: </td><td >     <p id="ascenseur"></p></td>
-								</tr>
+
 								<tr>
 							   <td>  : </td>   <td >   <p id="situationiveau"></p>   </td>
 								<td>  : </td>   <td >  <p id="loinculte"></p>   </td>
