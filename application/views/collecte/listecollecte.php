@@ -20,6 +20,7 @@
                                     <th>Collaboration avec cpi</th>
                                     <th>Nom du propriétaire</th>
                                     <th>Action</th>
+                                    <th>action </th>
                                 </tr>
                                 <?php foreach($infos as $i){ ?>
                                     <tr>
@@ -36,6 +37,12 @@
                                                         ';
 
                                                     }
+                                                    if($i->libellec=="A Louer")
+                                                    {
+                                                        echo '<button class="pd-setting">A Louer</button>
+                                                        ';
+
+                                                    }
                                                     if($i->libellec=="A Renover")
                                                     {
                                                         echo '<button class="ps-setting">A Renover</button>
@@ -45,6 +52,30 @@
                                                     if($i->libellec=="A Demolir")
                                                     {
                                                         echo '<button class="ds-setting">A Demolir</button>
+                                                        ';
+
+                                                    }
+                                                    if($i->libellec=="A Construire")
+                                                    {
+                                                        echo '<button class="pd-setting">A Construire</button>
+                                                        ';
+
+                                                    }
+                                                    if($i->libellec=="A Morceler")
+                                                    {
+                                                        echo '<button class="ps-setting">A Morceler</button>
+                                                        ';
+
+                                                    }
+                                                    if($i->libellec=="A Regulariser")
+                                                    {
+                                                        echo '<button class="ds-setting">A Regulariser</button>
+                                                        ';
+
+                                                    }
+                                                    if($i->libellec=="A Viabiliser")
+                                                    {
+                                                        echo '<button class="ds-setting">A Regulariser</button>
                                                         ';
 
                                                     }
@@ -60,11 +91,15 @@
                                         <div class="modal-area-button">
                               
                                             <button class="btn btn-primary  Alert Alert-color detail" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#AlertModalhdbgcl">Voir plus</button>
-                                            <button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button>
                                         </div>
 
                                         </td>
-                                       <td> <button class="btn btn-info" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button></td>
+                                        <td>
+                                       <button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button>
+
+                                       </td>
+                                       <td> <button class="btn btn-info" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button>
+                                       </td>
                                        
                                     </tr>
                                 <?php } ?>
@@ -269,6 +304,26 @@
     </div>
   </div>
 </div>
-                          
+<div id="AlertModalhdbgcl" class="modal modal-adminpro-general FullColor-popup-AlertModal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header header-color-modal bg-color-5">
+                                        <h4 class="modal-title">BG Color Header Modal</h4>
+                                        <div class="modal-close-area modal-close-df">
+                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="adminpro-icon adminpro-warning modal-check-pro information-icon-pro"></span>
+                                        <h2>Alert!</h2>
+                                        <p>The Modal plugin is a dialog box/popup window that is displayed on top of the current page</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a data-dismiss="modal" href="#">Cancel</a>
+                                        <a href="#">Process</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                     
   <script src="<?php echo base_url();?>public/js/detail.js"></script>
   <script src="<?php echo base_url();?>public/js/proprietaire.js"></script>
