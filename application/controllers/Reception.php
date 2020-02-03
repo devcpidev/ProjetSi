@@ -99,10 +99,13 @@ class Reception extends CI_Controller
     
     public function valider()
     {
-       if(isset($_GET['idproduit'])){
+       if(isset($_GET['idproduit']) && isset($_GET['numdossier'])){
             $idproduit = $_GET['idproduit'];
-           $data = $this->bien->valider( $idproduit);
-           redirect('reception/liste');
+            $numdossier = $_GET['numdossier'];
+            $new=substr_replace($numdossier,'D',-1);
+            $this->bien->valider( $idproduit);
+            $this->bien->updateFolderName($idproduit,$new);
+            redirect('reception/liste');
        }
     }
     public function pdf($numdossier){

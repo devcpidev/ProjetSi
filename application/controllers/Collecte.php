@@ -223,13 +223,13 @@ class Collecte extends CI_Controller
         if($user=2){
             $max =  $this->bien->getMaxidP();
             $date = date("Y-d");
-            $numdossier = "zu"."".$date."".$max;
+            $numdossier = "ZU"."-".$date."".$max."-"."P";
         }
         
         if($user=3){
             $max =  $this->bien->getMaxidP();
             $date = date("Y-d");
-            $numdossier = "zpu"."".$date."".$max;
+            $numdossier = "ZPU"."-".$date."".$max."-"."P";
             
         }
        // echo "yes".$this->session->userdata('idUser');

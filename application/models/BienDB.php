@@ -146,5 +146,11 @@
             $this->db->where('idproduit',$idproduit);
             return $this->db->update('produit');
         }
+        public function updateFolderName($idproduit,$new)
+        {
+            $this->db->set('numdossier', $new);
+            $this->db->where('idproduit',$idproduit);
+            return $this->db->update('produit');
+        }
     }
 ?>
