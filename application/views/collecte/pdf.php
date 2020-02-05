@@ -133,8 +133,8 @@
                                         </tr>
 
                                         <tr>
-                                        <td> <b>Surface Produit: </b> </td> 
-                                        <td><?php echo  $i->surface; ?>  </td>
+                                        <td> <b>Nombre de salle de bains: </b> </td> 
+                                        <td><?php echo  $i->nbsalledebain; ?>  </td>
                                         
                                         <td><b>Nombre Toillete :   </b></td>
                                         <td> <?php echo  $i->nbtoilettes; ?></td>

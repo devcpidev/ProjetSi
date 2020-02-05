@@ -83,7 +83,7 @@
                                            
                                         
                                         </td>
-                                        <td><?php echo  $i->prenom." ".$i->nom; ?></td>
+                                        <td><button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button></td>
                                        
                                        
                                         <td>
@@ -94,10 +94,7 @@
                                         </div>
 
                                         </td>
-                                        <td>
-                                       <button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button>
-
-                                       </td>
+                                       
                                        <td> <button class="btn btn-info" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button>
                                        </td>
                                        

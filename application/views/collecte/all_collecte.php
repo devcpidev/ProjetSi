@@ -54,13 +54,13 @@
                                            
                                         
                                         </td>
-                                        <td><?php echo  $i->prenom." ".$i->nom; ?></td>
+                                        <td> <button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button></td>
                                        
                                        
                                         <td> <div class="modal-area-button">
                               
                               <button class="btn btn-primary  Alert Alert-color detail" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#AlertModalhdbgcl">Voir plus</button>
-                              <button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button>
+                             
 
                           </div></td>
                                         
