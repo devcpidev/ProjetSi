@@ -37,6 +37,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('user', $user);
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
+            $this->session->set_userdata('profil',$user->profil);
           
             redirect('Login/home');
 
@@ -45,6 +46,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
             $this->session->set_userdata('idUser', $user->idUser);
+            $this->session->set_userdata('profil',$user->profil);
 
             //$this->load->view('collecte/addcollecte',$data);
            redirect('collecte/add');
@@ -55,6 +57,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
             $this->session->set_userdata('idUser', $user->idUser);
+            $this->session->set_userdata('profil',$user->profil);
 
             //$this->load->view('collecte/addcollecte',$data);
            redirect('collecte/add');
@@ -65,6 +68,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('email',$email);
             $this->session->set_userdata('type',$user->libelle);
             $this->session->set_userdata('idUser', $user->idUser);
+            $this->session->set_userdata('profil',$user->profil);
 
             //$this->load->view('collecte/addcollecte',$data);
            redirect('reception/liste');

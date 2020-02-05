@@ -213,21 +213,24 @@ class NonBati extends CI_Controller
 		// fin
 
 		//création du numero de dossier
-		$numdossier="";
-        $user = $this->session->userdata('idUser');
-        if($user=2){
+		$numdossier= "";
+        $profil = $this->session->userdata('profil');
+      
+        if($profil==2){
+            echo "fff".$profil;
             $max =  $this->bien->getMaxidP();
             $date = date("Y-d");
             $numdossier = "ZU"."-".$date."".$max."-"."P";
+            echo $numdossier;
         }
         
-        if($user=3){
+        if($profil==3){
             $max =  $this->bien->getMaxidP();
             $date = date("Y-d");
             $numdossier = "ZPU"."-".$date."".$max."-"."P";
             
         }
-		// echo "yes".$this->session->userdata('idUser');
+    // echo "yes".$this->session->userdata('idUser');
 		//echo "gg".$typebiennonbati;
 		if (($typebiennonbati == 1 && $services == 1) || ($typebiennonbati == 2 && $services == 1) || ($typebiennonbati == 3 && $services == 1) || ($typebiennonbati == 4 && $services == 1) || ($typebiennonbati == 5 && $services == 1)) {
 

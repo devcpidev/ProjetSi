@@ -104,6 +104,7 @@ class Collecte extends CI_Controller
     }
     public function save()
     {
+        $this->load->library('session');
         //recuperation des données du propriétaire
         $cnipropi = $this->input->post('cnipropi');
         $nom = $this->input->post('nom');
@@ -220,24 +221,29 @@ class Collecte extends CI_Controller
         // fin
 
         //création du numero de dossier
-        $numdossier="";
-        $user = $this->session->userdata('idUser');
-        if($user=2){
+        $numdossier= "";
+        $profil = $this->session->userdata('profil');
+      
+        if($profil==2){
+            echo "fff".$profil;
             $max =  $this->bien->getMaxidP();
             $date = date("Y-d");
             $numdossier = "ZU"."-".$date."".$max."-"."P";
+            echo $numdossier;
         }
         
-        if($user=3){
+        if($profil==3){
             $max =  $this->bien->getMaxidP();
             $date = date("Y-d");
             $numdossier = "ZPU"."-".$date."".$max."-"."P";
             
         }
        // echo "yes".$this->session->userdata('idUser');
+       echo $numdossier;
 
         if( ($typebienbati==1 && $collaboration==1) || ($typebienbati==2 && $collaboration==1) || ($typebienbati==3 && $collaboration==1) || ($typebienbati==4 && $collaboration==1) || ($typebienbati==5 && $collaboration==1) || ($typebienbati==6 && $collaboration==1) || ($typebienbati==7 && $collaboration==1)){
             
+            echo $numdossier;
             $prop =  $this->prop->findByCNI($this->input->post('cnipropi'));
             if($prop!=null){
                 $datacollecte = array(
