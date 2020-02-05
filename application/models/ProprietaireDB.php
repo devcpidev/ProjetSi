@@ -18,5 +18,10 @@
             $query = $this->db->query("SELECT  nom,prenom,tel,adressesen,email,nomrep,telrep,emailrep,adresserep FROM collecte  WHERE numdossier='$dossier' ");
             return $query->row();
         }
+
+		public function getNonbatiProp($dossier){
+			$query = $this->db->query("SELECT  nom,prenom,tel,adressesen,email,nomrep,telrep,emailrep,adresserep FROM collectenonbati  WHERE numdossier='$dossier' ");
+			return $query->row();
+		}
     }
 ?>

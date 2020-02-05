@@ -22,50 +22,10 @@ $(document).ready(function(){
 
 
 				}
-				if(data.idtypebien==2){
+				if(data.idtypebiennonbati==2){
 					$('#libelletype').append(data.libelletype);
-					$('#usage').append(data.usagebienbati);
 					$('#nature').append(data.nature);
-					if(data.nbpieces!=null){
-						$('#nbpieces').append(data.nbpieces);
-					}else{
-						$('#nbpieces').append(""+0);
-					}
-					if(data.nbsalledebain!=null){
-						$('#nbsalledebain').append(data.nbsalledebain);
-					}else{
-						$('#nbsalledebain').append(""+0);
-					}
-					if(data.nbtoilettes!=null){
-						console.log(data.nbtoilettes)
-						$('#nbtoilettes').append(data.nbtoilettes);
-					}else{
-						$('#nbtoilettes').append(""+0);
-					}
-
-					if(data.jardin!=null){
-						$('#jardin').append(data.jardin);
-					}else{
-						$('#jardin').append("sans jardin");
-					}
-
-					if(data.typecuisine!=null){
-						$('#cuisine').append("<strong>Type de cuisine : </strong>"+data.typecuisine+" ");
-					}else{
-						$('#cuisine').append("");
-					}
-
-					if(data.piscine!=null){
-						$('#piscine').append("<strong>Piscine  : </strong>"+data.piscine+" ");
-					}else{
-						$('#piscine').append("");
-					}
-					if(data.nbgarage!=null){
-						$('#garage').append("<strong>Nombre de garages: </strong>"+data.nbgarage+"");
-					}else{
-						$('#garage').append(""+0);
-					}
-
+					$('#surface').append(data.surface);
 					if(data.broutep!=null){
 						$('#broutep').append(data.broutep);
 					}

@@ -7,6 +7,7 @@ class NonBati extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('BienDB','bien');
+		$this->load->model('ProprietaireDB','prop');
 		$this->load->library('session');
 
 	}
@@ -760,6 +761,14 @@ class NonBati extends CI_Controller
 		if (isset($_GET['numdossier'])) {
 			$numdossier = $_GET['numdossier'];
 			$data = $this->bien->getElemByNumdossier($numdossier);
+			echo json_encode($data);
+		}
+	}
+
+	public function prop(){
+		if (isset($_GET['numdossier'])) {
+			$numdossier = $_GET['numdossier'];
+			$data = $this->prop->getNonbatiProp($numdossier);
 			echo json_encode($data);
 		}
 	}

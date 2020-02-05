@@ -19,7 +19,12 @@
 							<th>Type du bien non Bati</th>
 							<th>Collaboration avec cpi</th>
 							<th>Nom du propriétaire</th>
+
+
 							<th>Action</th>
+							<th>Action</th>
+							<th>Action</th>
+
 						</tr>
 						<?php foreach($infos as $i){ ?>
 							<tr>
@@ -28,28 +33,23 @@
 								<td><?php echo  $i->adresse; ?></td>
 								<td><?php echo $i->nature; ?></td>
 								<td><?php echo  $i->libellebiennonbati; ?></td>
-								<td><?php echo  $i->libelleTypeServ; ?></td>
-								<td><?php echo  $i->prenom." ".$i->nom; ?></td>
+
+
 								<td> <?php
 
-									if($i->libelleTypeServ!="Vente")
+									if($i->libelleTypeServ=="Vente")
 									{
-										echo ' <button class="pd-setting">A Vendre</button>
+										echo ' <button class="ps-setting">A Vendre</button>
                                                         ';
 
 									}
-									if($i->libelleTypeServ!="Location")
+									if($i->libelleTypeServ=="Location")
 									{
-										echo '<button class="ps-setting">Paused</button>
+										echo '<button class="ps-setting">A louer</button>
                                                         ';
 
 									}
-									if($i->libelleTypeServ!="Gerance")
-									{
-										echo '<button class="ds-setting">A Demolir</button>
-                                                        ';
 
-									}
 									?>
 
 
@@ -57,16 +57,20 @@
 
 
 
+								<td><button class="btn btn-primary  Alert Alert-color prop" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#propModal">Propriétaire</button></td>
+
+
 								<td>
 									<!-- <button class="btn btn-primary detail" data-toggle="modal" data-target="#myModal" id="<?php echo  $i->numdossier; ?>" >Voir plus</button>-->
 									<div class="modal-area-button">
 
 										<button class="btn btn-primary  Alert Alert-color detail" href="#" data-toggle="modal" id="<?php echo  $i->numdossier; ?>" data-target="#AlertModalhdbgcl">Voir plus</button>
-
 									</div>
 
 								</td>
-								<td> <button class="btn btn-info" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button></td>
+
+								<td> <button class="btn btn-info" data-toggle="modal" data-target="#modal_update" id="<?php echo  $i->utilisateur; ?>" > <i class="fa fa-edit fa-lg"></i></button>
+								</td>
 
 							</tr>
 						<?php } ?>
@@ -114,27 +118,14 @@
 												<td> <i><b>nature juridique : </b></i></td><td > <p id="nature"></p></td>
 
 											</tr>
+
 											<tr>
-												<td> <i><b>Usage de Bien:</b></i> </td><td > <p id="usage"></p></td>
+												<td> <i><b>Libelle: </b></i></td><td >   <p id="libellebiennonbati"></p></td>
 											</tr>
 											<tr>
-												<td> <i><b>Type Immeuble:</b></i> </td><td > <p id="typeimmeuble"></p></td>
+												<td> <i><b>superficie :</b></i> </td><td >   <p id="surface"></p></td>
 											</tr>
-											<tr>
-												<td> <i><b>Libelle: </b></i></td><td >   <p id="libelletype"></p></td>
-											</tr>
-											<tr>
-												<td> <i><b>Nombre de pieces :</b></i> </td><td >   <p id="nbpieces"></p></td>
-											</tr>
-											<tr>
-												<td> <i><b>Nombre de salle de bains :</b></i> </td><td >   <p id="nbsalledebain"></p></td>
-											</tr>
-											<tr>
-												<td> <i><b>Jardin : </b></i></td><td >    <p id="jardin"></p></td>
-											</tr>
-											<tr>
-												<td> <i><b>Nombre de Garage :</b></i> </td><td >    <p id="garage"></p></td>
-											</tr>
+
 											<tr>
 												<!-- <td> Nombre de Cuisine: </td><td >      <p id="cuisine"></p></td>
 												</tr>
@@ -241,5 +232,34 @@
 	</div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="propModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Informations du Propriétaire</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p id="nom"></p>
+				<p id="prenom"></p>
+				<p id="adressesen"></p>
+				<p id="tel"></p>
+				<p id="email"></p>
+				<p id="nomrep"></p>
+				<p id="telrep"></p>
+				<p id="adresserep"></p>
+				<p id="emailrep"></p>
+				<p id="tel"></p>
 
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
 <script src="<?php echo base_url();?>public/js/detail.js"></script>
+<script src="<?php echo base_url();?>public/js/proprieteNonbati.js"></script>
