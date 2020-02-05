@@ -212,20 +212,20 @@ class NonBati extends CI_Controller
 		// fin
 
 		//création du numero de dossier
-		$numdossier = "";
-		$user = $this->session->userdata('idUser');
-		if ($user = 2) {
-			$max = $this->bien->getMaxidP();
-			$date = date("Y-d");
-			$numdossier = "zu" . "" . $date . "" . $max;
-		}
-
-		if ($user = 3) {
-			$max = $this->bien->getMaxidP();
-			$date = date("Y-d");
-			$numdossier = "zpu" . "" . $date . "" . $max;
-
-		}
+		$numdossier="";
+        $user = $this->session->userdata('idUser');
+        if($user=2){
+            $max =  $this->bien->getMaxidP();
+            $date = date("Y-d");
+            $numdossier = "ZU"."-".$date."".$max."-"."P";
+        }
+        
+        if($user=3){
+            $max =  $this->bien->getMaxidP();
+            $date = date("Y-d");
+            $numdossier = "ZPU"."-".$date."".$max."-"."P";
+            
+        }
 		// echo "yes".$this->session->userdata('idUser');
 		//echo "gg".$typebiennonbati;
 		if (($typebiennonbati == 1 && $services == 1) || ($typebiennonbati == 2 && $services == 1) || ($typebiennonbati == 3 && $services == 1) || ($typebiennonbati == 4 && $services == 1) || ($typebiennonbati == 5 && $services == 1)) {
@@ -254,7 +254,8 @@ class NonBati extends CI_Controller
 				'presculte' => $presculte,
 				'loinecole' => $loinecole,
 				'presecole' => $presecole,
-				'numdossier' => $numdossier
+				'numdossier' => $numdossier,
+				'typebiennonbati' => 	$typebiennonbati
 
 			);
 			if ($prop != 0) {
@@ -343,7 +344,8 @@ class NonBati extends CI_Controller
 				'presculte' => $presculte,
 				'loinecole' => $loinecole,
 				'presecole' => $presecole,
-				'numdossier' => $numdossier
+				'numdossier' => $numdossier,
+				'typebiennonbati' => 	$typebiennonbati
 			);
 
 			if ($prop != 0) {
@@ -373,7 +375,7 @@ class NonBati extends CI_Controller
 			$datacollecte = array(
 				'adresse' => $adresse,
 				'nature' => $nature,
-
+				'typebiennonbati' => 	$typebiennonbati,
 				'zone' => $zone,
 				'surface' => $surface,
 				'typeservices' => $services,
@@ -417,10 +419,8 @@ class NonBati extends CI_Controller
 			$datacollecte = array(
 				'adresse' => $adresse,
 				'nature' => $nature,
-
 				'typebiennonbati' => $typebiennonbati,
 				'etatdroitreel' => $etatdroitreel,
-
 				'zone' => $zone,
 				'typeservices' => $services,
 				'surface' =>$surface,
@@ -473,7 +473,7 @@ class NonBati extends CI_Controller
 				'titreprop' => $titreprop,
 				'autresdoc' => $autresdoc,
 				'jeuxcons' => $jeuxcons,
-
+				'typebiennonbati' => 	$typebiennonbati,
 				'broutep' => $broutep,
 				'broute' => $broute,
 				'angle' => $angle,
@@ -518,7 +518,7 @@ class NonBati extends CI_Controller
 				'typeservices' => $services,
 				'proprietaire' => $prop,
 				'titreprop' => $titreprop,
-
+				'typebiennonbati' => 	$typebiennonbati,
 				'broutep' => $broutep,
 				'broute' => $broute,
 				'angle' => $angle,
@@ -557,9 +557,7 @@ class NonBati extends CI_Controller
 			$datacollecte = array(
 				'adresse' => $adresse,
 				'nature' => $nature,
-
 				'typebiennonbati' => $typebiennonbati,
-
 				'zone' => $zone,
 				'typeservices' => $services,
 				'proprietaire' => $prop,

@@ -19,6 +19,7 @@ $(document).ready(function() {
 
                 // disabled
                 $('#nom')[0].disabled =true
+                $('#info')[0].disabled =true
                 $('#prenom')[0].disabled =true
                 $('#adressesen')[0].disabled =true
                 $('#tel')[0].disabled =true

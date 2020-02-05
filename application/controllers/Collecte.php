@@ -105,6 +105,7 @@ class Collecte extends CI_Controller
     public function save()
     {
         //recuperation des données du propriétaire
+        $cnipropi = $this->input->post('cnipropi');
         $nom = $this->input->post('nom');
         $prenom = $this->input->post('prenom');
         $tel= $this->input->post('tel');
@@ -193,6 +194,7 @@ class Collecte extends CI_Controller
            
 
         $dataproprietaire= array(
+            'cnipropi' => $cnipropi,
             'nom' => $nom,
             'prenom' =>$prenom,
             'tel' => $tel,
@@ -1387,6 +1389,11 @@ class Collecte extends CI_Controller
            $data = $this->prop->getproprio($numdossier);
            echo json_encode($data);
         }
+    }
+
+    public function updateFolderName()
+    {
+        
     }
 
    
