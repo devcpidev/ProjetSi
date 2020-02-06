@@ -14,6 +14,9 @@ $(document).ready(function(){
             //hide
        
         $('#typeimmeuble').html("") 
+        $('#sitstudio').html("")
+        $('#piscine').html("")
+        $('#cours').html("")
         // end hide
         $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
         $('.nbsalledebain').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbsalledebain' placeholder='Ajouter le nombre de salle de bain'></div>")
@@ -61,6 +64,8 @@ $(document).ready(function(){
          $('#typeimmeuble').html("")
          $('#jardin').html("")
          $('#piscine').html("")
+         $('#nbgarage').html("")
+         $('#cours').html("")
           // end hide
         $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' > <option value=''>Studio Situé</option> <option value='RDC'>RDC</option> <option value='1er etage'>1er Etage</option><option value='2ieme etage'>2ieme etage</option><option value='3ieme etage'>3ieme etage</option> <option value='4ieme etage'>4ieme etage</option><option value='5ieme etage'>5ieme etage</option><option value='6ieme etage'>6ieme etage</option></select></div>")
         $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
@@ -75,6 +80,8 @@ $(document).ready(function(){
         $('#typeimmeuble').html("")
         $('#jardin').html("")
         $('#piscine').html("")
+        $('#nbgarage').html("")
+        $('#cours').html("")
          // end hide
          $('#sitstudio').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-building' aria-hidden='true'></i></span><select class='form-control' name='studiositue' > <option value=''>Appartement Situé</option> <option value='RDC'>RDC</option> <option value='1er etage'>1er Etage</option><option value='2ieme etage'>2ieme etage</option><option value='3ieme etage'>3ieme etage</option> <option value='4ieme etage'>4ieme etage</option><option value='5ieme etage'>5ieme etage</option><option value='6ieme etage'>6ieme etage</option></select></div>")
          $('#nbpieces').html("<div class='input-group mg-b-15'> <span class='input-group-addon'><i class='fa fa-user' aria-hidden='true'></i></span><input type='number' class='form-control' name='nbpieces' placeholder='Ajouter le nombre de pièces'></div>")
@@ -87,7 +94,7 @@ $(document).ready(function(){
     if($('#typebienbati').val() == 6){
         //hide
         $('#jardin').html("")
-        $('#sitstudio').html("")
+        //sitstudio').html("")
         $('#nbgarage').html("")
         $('#typecuisine').html("")
         $('#cours').html("")
