@@ -163,8 +163,8 @@ $id = $this->session->userdata('id');
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/add"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bien Bati</span></a></li>
                                 <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/BienNonBati"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bien Non Bati</span></a></li>
-                                <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste</span></a></li>
-                                <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Non Bati</span></a></li>
+                                <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Bâtis</span></a></li>
+                                <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Non Bâtis</span></a></li>
 
                             </ul>
                         </li>
@@ -183,8 +183,9 @@ $id = $this->session->userdata('id');
                             <a class="has-arrow" href="" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Collecte</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/add"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter</span></a></li>
-                                <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste</span></a></li>
-                                <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Non Bati</span></a></li>
+                                <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/BienNonBati"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bien Non Bati</span></a></li>
+                                <li><a title="" href="http://localhost/ProjetSi/index.php/Collecte/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Bâtis</span></a></li>
+                                <li><a title="" href="http://localhost/ProjetSi/index.php/NonBati/liste"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Non Bâtis</span></a></li>
 
                             </ul>
                         </li>
