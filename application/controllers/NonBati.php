@@ -66,6 +66,7 @@ class NonBati extends CI_Controller
 	}
 	public function save()
 	{
+		$this->load->library('session');
 		//recuperation des données du propriétaire
 		$nom = $this->input->post('nom');
 		$prenom = $this->input->post('prenom');
